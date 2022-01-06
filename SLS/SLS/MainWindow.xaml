@@ -40,7 +40,7 @@
                 <StackPanel Orientation="Horizontal"
                             HorizontalAlignment="Right"
                             Margin="0,0,20,0">
-                    
+
                     <Button Content="_"
                             Height="20"
                             Width="20"
@@ -49,7 +49,7 @@
                             Foreground="Gray"
                             BorderThickness="0"
                             FontWeight="ExtraBold"
-                            Command="{Binding MinimizeAppCommand}"/>
+                            Command="{Binding MinimaizeAppWindow}"/>
 
                     <Button Content="▢"
                             Height="20"
@@ -58,7 +58,7 @@
                             Foreground="Gray"
                             BorderThickness="0"
                             FontWeight="Bold"
-                            Command="{Binding MaximazeAppCommand}"/>
+                            Command="{Binding MaximaizeAppWindow}"/>
 
                     <Button Content="✕"
                             Height="20"
@@ -67,8 +67,8 @@
                             Foreground="Gray"
                             BorderThickness="0"
                             FontWeight="Bold"
-                            Command="{Binding CloseApplicationCommand}"/>  
-                    
+                            Command="{Binding CloseAppCommand}"/>
+
                 </StackPanel>
                 
             </Grid>

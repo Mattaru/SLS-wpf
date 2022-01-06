@@ -12,9 +12,9 @@ namespace SLS.Core
     {
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        public virtual void OnPropertyChnged([CallerMemberName] string name = null) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        public virtual void OnPropertyChnged([CallerMemberName] string? name = null) => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
 
-        public virtual void Set<T>(ref T field, T value, [CallerMemberName] string propertyName = null)
+        public virtual void Set<T>(ref T field, T value, [CallerMemberName] string? propertyName = null)
         {
             if (Equals(field, value)) throw new ArgumentNullException(nameof(field));
             OnPropertyChnged(propertyName);
