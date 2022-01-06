@@ -8,7 +8,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Infrastucture\Commands\" />
     <Folder Include="MVVM\View\" />
     <Folder Include="Themes\" />
     <Folder Include="Services\" />

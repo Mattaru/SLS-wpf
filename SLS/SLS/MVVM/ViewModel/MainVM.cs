@@ -1,11 +1,10 @@
 ﻿using SLS.Core;
+using SLS.Infrastucture.Commands;
 using SLS.MVVM.Model;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Input;
 
 namespace SLS.MVVM.ViewModel
 {
@@ -13,8 +12,23 @@ namespace SLS.MVVM.ViewModel
     {
         public ObservableCollection<ResourceModel> ResourceCollection { get; }
 
+        // Commands
+
+        public ICommand CloseApplicationCommand;
+
+        private bool CanCloseApplicationCommandExecute(object p) => true;
+
+        private void OnCloseApplicationCommandExecuted(object p) => Application.Current.Shutdown();
+
+
         public MainVM()
         {
+            #region
+
+            CloseApplicationCommand = new LambdaCommand(OnCloseApplicationCommandExecuted, CanCloseApplicationCommandExecute);
+
+            #endregion
+
             var resources = Enumerable.Range(1, 100).Select(i => new ResourceModel
             {
                 Name = $"Name {i}",
