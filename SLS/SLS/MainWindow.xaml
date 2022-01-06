@@ -28,17 +28,16 @@
 
         <Border Grid.Row="0" Grid.ColumnSpan="2"
                 Background="#252525">
-            
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
 
-                <Label Grid.Column="0"/>
+            <Grid VerticalAlignment="Stretch">
 
-                <StackPanel Grid.Column="1"
-                            Orientation="Horizontal"
+                <Label Foreground="#CFCFCF"
+                       VerticalContentAlignment="Center"
+                       HorizontalContentAlignment="Left"
+                       Content="{Binding Title}"
+                       FontSize="12"/>
+
+                <StackPanel Orientation="Horizontal"
                             HorizontalAlignment="Right"
                             Margin="0,0,20,0">
                     
@@ -59,7 +58,7 @@
                             Foreground="Gray"
                             BorderThickness="0"
                             FontWeight="Bold"
-                            Command=""/>
+                            Command="{Binding MaximazeAppCommand}"/>
 
                     <Button Content="✕"
                             Height="20"
@@ -68,7 +67,7 @@
                             Foreground="Gray"
                             BorderThickness="0"
                             FontWeight="Bold"
-                            Command=""/>  
+                            Command="{Binding CloseApplicationCommand}"/>  
                     
                 </StackPanel>
                 
