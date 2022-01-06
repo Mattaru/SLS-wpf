@@ -2,8 +2,18 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:SLS"
+             xmlns:vm="clr-namespace:SLS.MVVM.ViewModel"
+             xmlns:v="clr-namespace:SLS.MVVM.View"
              StartupUri="MainWindow.xaml">
+    
     <Application.Resources>
-         
+        <ResourceDictionary>
+            
+            <DataTemplate DataType="{x:Type vm:HomeVM}">
+                <v:HomeV/>
+            </DataTemplate>
+            
+        </ResourceDictionary>
     </Application.Resources>
+    
 </Application>

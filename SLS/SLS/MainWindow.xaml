@@ -77,7 +77,8 @@
 
         <DataGrid Grid.Row="1" Grid.Column="0"
                   ItemsSource="{Binding ResourceCollection}"
-                  AutoGenerateColumns="False">
+                  AutoGenerateColumns="False"
+                  Visibility="Collapsed">
 
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Name"
@@ -102,6 +103,9 @@
             </DataGrid.Columns>
             
         </DataGrid>
+
+        <ContentControl Grid.Row="1" Grid.Column="0"
+                        Content="{}"/>
 
         <Border Grid.Row="1" Grid.Column="1"
                 Background="#252525">
