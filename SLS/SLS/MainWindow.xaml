@@ -49,7 +49,7 @@
                             Foreground="Gray"
                             BorderThickness="0"
                             FontWeight="ExtraBold"
-                            Command=""/>
+                            Command="{Binding MinimizeAppCommand}"/>
 
                     <Button Content="▢"
                             Height="20"
@@ -105,7 +105,7 @@
         </DataGrid>
 
         <ContentControl Grid.Row="1" Grid.Column="0"
-                        Content="{}"/>
+                        Content="{Binding CurrentView}"/>
 
         <Border Grid.Row="1" Grid.Column="1"
                 Background="#252525">

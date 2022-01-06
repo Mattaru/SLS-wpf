@@ -1,6 +1,7 @@
 ﻿using SLS.Core;
 using SLS.Infrastucture.Commands;
 using SLS.MVVM.Model;
+using SLS.MVVM.View;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
@@ -22,6 +23,8 @@ namespace SLS.MVVM.ViewModel
 
         // Views
 
+        public HomeV HomeV { get; set; }
+
         #region Current view
 
         static object _currentView;
@@ -34,11 +37,11 @@ namespace SLS.MVVM.ViewModel
 
         #region Close app COMMAND
 
-        public ICommand CloseApplicationCommand;
+        public ICommand CloseAppCommand;
 
-        private bool CanCloseApplicationCommandExecute(object p) => true;
+        private bool CanCloseAppCommandExecute(object p) => true;
 
-        private void OnCloseApplicationCommandExecuted(object p) => Application.Current.Shutdown();
+        private void OnCloseAppCommandExecuted(object p) => Application.Current.Shutdown();
 
         #endregion
 
@@ -72,7 +75,7 @@ namespace SLS.MVVM.ViewModel
         {
             #region Commands
 
-            CloseApplicationCommand = new LambdaCommand(OnCloseApplicationCommandExecuted, CanCloseApplicationCommandExecute);
+            CloseAppCommand = new LambdaCommand(OnCloseAppCommandExecuted, CanCloseAppCommandExecute);
             MaximizeAppCommand = new LambdaCommand(OnMaximizeAppCommandExecuted, CanMaximizeAppCommandExecute);
             MinimizeAppCommand = new LambdaCommand(OnMinimizeAppCommandExecuted, CanMinimizeAppCommandExecute);
 
@@ -85,6 +88,8 @@ namespace SLS.MVVM.ViewModel
                 Password = $"Password {i}"
             });
             ResourceCollection = new ObservableCollection<ResourceModel>(resources);
+
+            CurrentView = new HomeV();
         }
     }
 }
