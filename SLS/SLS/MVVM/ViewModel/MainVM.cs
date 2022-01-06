@@ -19,11 +19,11 @@ namespace SLS.MVVM.ViewModel
 
         #endregion
 
-        public ObservableCollection<ResourceModel> ResourceCollection { get; }
-
         // Views
 
         public HomeV HomeV { get; set; }
+
+        public ResourcesListV ResourcesListV { get; set; }
 
         #region Current view
 
@@ -81,15 +81,7 @@ namespace SLS.MVVM.ViewModel
 
             #endregion
 
-            var resources = Enumerable.Range(1, 100).Select(i => new ResourceModel
-            {
-                Name = $"Name {i}",
-                Login = $"Login {i}",
-                Password = $"Password {i}"
-            });
-            ResourceCollection = new ObservableCollection<ResourceModel>(resources);
-
-            CurrentView = new HomeV();
+            CurrentView = new ResourcesListV();
         }
     }
 }

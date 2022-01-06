@@ -10,18 +10,8 @@ namespace SLS.MVVM.ViewModel
 {
     internal class HomeVM
     {
-        public ObservableCollection<ResourceModel> ResourceModels { get; }
-
         public HomeVM()
         {
-            var resources = Enumerable.Range(1, 100).Select(i => new ResourceModel
-            {
-                Name = $"Name {i}",
-                Login = $"Login {i}",
-                Password = $"Password {i}"
-            });
-
-            ResourceModels = new ObservableCollection<ResourceModel>(resources);
         }
     }
 }

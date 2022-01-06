@@ -13,45 +13,6 @@
             <vm:HomeVM/>
         </Grid.DataContext>
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
-            <RowDefinition/>
-            <RowDefinition Height="30"/>
-        </Grid.RowDefinitions>
-
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="250"/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-
-        <DataGrid Grid.Row="1" Grid.Column="1"
-                  Margin="10"
-                  ItemsSource="{Binding ResourceModels}"
-                  AutoGenerateColumns="False">
-
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Name"
-                                    Binding="{Binding Name}"
-                                    Width="*"/>
-
-                <DataGridTextColumn Header="Login"
-                                    Binding="{Binding Login}"
-                                    Width="*"/>
-
-                <DataGridTextColumn Header="Password"
-                                    Binding="{Binding Password}"
-                                    Width="*"/>
-
-                <DataGridTextColumn Header="Last modificated"
-                                    Binding="{Binding LastModificationDate}"
-                                    Width="120"/>
-
-                <DataGridTextColumn Header="Creation date"
-                                    Binding="{Binding CreationDate}"
-                                    Width="120"/>
-            </DataGrid.Columns>
-        </DataGrid>
-
     </Grid>
     
 </UserControl>
