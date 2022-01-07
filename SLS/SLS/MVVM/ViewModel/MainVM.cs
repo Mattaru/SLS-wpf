@@ -80,7 +80,7 @@ namespace SLS.MVVM.ViewModel
 
             #endregion
 
-            CurrentView = new ResourcesListV();
+            CurrentView = new HomeV();
         }
     }
 }

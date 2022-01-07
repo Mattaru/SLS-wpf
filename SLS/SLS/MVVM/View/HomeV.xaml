@@ -6,13 +6,68 @@
              xmlns:local="clr-namespace:SLS.MVVM.View"
              xmlns:vm="clr-namespace:SLS.MVVM.ViewModel"
              d:DesignHeight="620" d:DesignWidth="950">
-    
+
     <Grid>
 
         <Grid.DataContext>
             <vm:HomeVM/>
         </Grid.DataContext>
 
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="1"
+              Background="#252525">
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition MinWidth="250"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="1"
+                        VerticalAlignment="Center">
+
+                <Label Content="{Binding ResourceFormTitle, UpdateSourceTrigger=PropertyChanged}"
+                       HorizontalContentAlignment="Center"
+                       VerticalContentAlignment="Bottom"
+                       Foreground="#CFCFCF"
+                       FontSize="16"/>
+
+                <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"
+                         Tag="Name"
+                         Background="#353340"
+                         VerticalContentAlignment="Center"
+                         HorizontalContentAlignment="Center"
+                         Style="{StaticResource HTForm_tb}"/>
+
+                <TextBox Text="{Binding Login, UpdateSourceTrigger=PropertyChanged}"
+                         Tag="Login"
+                         Background="#353340"
+                         VerticalContentAlignment="Center"
+                         HorizontalContentAlignment="Center"
+                         Style="{StaticResource HTForm_tb}"/>
+
+                <TextBox Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}"
+                         Tag="Password"
+                         Background="#353340"
+                         VerticalContentAlignment="Center"
+                         HorizontalContentAlignment="Center"
+                         Style="{StaticResource HTForm_tb}"/>
+
+                <Button Content="Add"
+                        Height="30"
+                        Width="60"
+                        HorizontalAlignment="Right"
+                        Style="{StaticResource HTForm_b}"/>
+
+
+            </StackPanel>
+            
+        </Grid>
+        
     </Grid>
     
 </UserControl>

@@ -1,0 +1,55 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style TargetType="{x:Type TextBox}" x:Key="HTForm_tb">
+
+        <Setter Property="Height" Value="40"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+
+                    <Border CornerRadius="4"
+                            x:Name="FormBorder"
+                            Background="#CFCFCF"
+                            Margin="0,5,0,5">
+
+                        <Grid>
+                            <ScrollViewer Focusable="False"
+                                          x:Name="PART_ContentHost"
+                                          HorizontalScrollBarVisibility="Hidden"
+                                          VerticalScrollBarVisibility="Hidden"/>
+
+                            <Label x:Name="FormTextBoxLabel"
+                                   Content="{TemplateBinding Tag}"
+                                   VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                   HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                   Foreground="Gray"
+                                   IsHitTestVisible="False"
+                                   Visibility="Collapsed"/>
+
+                            <Rectangle Fill="#FF76B3BB"
+                                       x:Name="ButtomTextBoxRectangle"
+                                       Height="2"
+                                       VerticalAlignment="Bottom"
+                                       Visibility="Collapsed"/>
+                        </Grid>
+                    </Border>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Text" Value="">
+                            <Setter Property="Visibility" TargetName="FormTextBoxLabel" Value="Visible"/>
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="Visibility" TargetName="ButtomTextBoxRectangle" Value="Visible"/>
+                            <Setter Property="Background" TargetName="FormBorder" Value="#CFCFCF"/>
+                            <Setter Property="Visibility" TargetName="FormTextBoxLabel" Value="Collapsed"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+
+</ResourceDictionary>

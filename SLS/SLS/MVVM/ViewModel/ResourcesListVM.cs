@@ -13,7 +13,7 @@ namespace SLS.MVVM.ViewModel
 
         #region SelectedResource
 
-        private ResourceModel _SelectedResource;
+        private ResourceModel? _SelectedResource;
 
         public ResourceModel SelectedResource { get => _SelectedResource; set => Set<ResourceModel>(ref _SelectedResource, value); }
 
@@ -43,7 +43,7 @@ namespace SLS.MVVM.ViewModel
 
         public ResourcesListVM()
         {
-            #region
+            #region Commands
 
             AddEmptyRecource = new LambdaCommand(OnAddEmptyRecourceExecuted, CanAddEmptyRecourceExecute);
             RemoveResource = new LambdaCommand(OnRemoveResourceExecuted, CanRemoveResourceExecute);
