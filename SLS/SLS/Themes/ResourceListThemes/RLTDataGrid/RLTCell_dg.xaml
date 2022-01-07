@@ -4,7 +4,7 @@
     <Style TargetType="{x:Type DataGridCell}" x:Key="RLTCell_dg">
         <Style.Triggers>
             <Trigger Property="IsSelected" Value="True">
-                <Setter Property="Background" Value="#453340"/>
+                <Setter Property="Background" Value="#252525"/>
                 <Setter Property="Foreground" Value="#CFCFCF"/>
                 <Setter Property="BorderBrush" Value="Transparent"/>
             </Trigger>

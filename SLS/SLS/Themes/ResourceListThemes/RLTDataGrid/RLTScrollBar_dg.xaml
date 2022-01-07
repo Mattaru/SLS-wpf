@@ -13,7 +13,7 @@
 
                     <Grid x:Name="Bg"
                           SnapsToDevicePixels="true" 
-                          Background="#FF63BECA">
+                          Background="#FF76B3BB">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="0.00001*"/>
                         </Grid.RowDefinitions>

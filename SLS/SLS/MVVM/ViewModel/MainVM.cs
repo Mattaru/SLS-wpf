@@ -34,9 +34,9 @@ namespace SLS.MVVM.ViewModel
 
         // Commands
 
-        #region Close app COMMAND
+        #region CloseAppCommand COMMAND
 
-        public ICommand CloseAppCommand;
+        public ICommand CloseAppCommand { get; }
 
         private bool CanCloseAppCommandExecute(object p) => true;
 
@@ -44,9 +44,9 @@ namespace SLS.MVVM.ViewModel
 
         #endregion
 
-        #region Maximaize app COMMAND
+        #region MaximizeAppCommand COMMAND
 
-        public ICommand MaximizeAppCommand;
+        public ICommand MaximizeAppCommand { get; }
 
         private bool CanMaximizeAppCommandExecute(object p) => true;
 
@@ -60,9 +60,9 @@ namespace SLS.MVVM.ViewModel
 
         #endregion
 
-        #region Minimize app COMMAND
+        #region MinimizeAppCommand COMMAND
 
-        public ICommand MinimizeAppCommand;
+        public ICommand MinimizeAppCommand { get; }
 
         private bool CanMinimizeAppCommandExecute(object p) => true;
 

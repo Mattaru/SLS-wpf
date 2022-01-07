@@ -24,6 +24,39 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
+        <Border Grid.RowSpan="3" Grid.Column="0"
+                Background="#252525">
+
+            <StackPanel Orientation="Vertical">
+
+                <TextBox Height="30"
+                         Margin="10"
+                         Tag="Search ..."
+                         Background="#CFCFCF"
+                         VerticalContentAlignment="Center"
+                         HorizontalContentAlignment="Left"
+                         Padding="16,0"
+                         FontSize="12"
+                         Style="{StaticResource RLTSearch_tb}"/>
+
+                <Button Content="Add emty"
+                        Width="80"
+                        HorizontalAlignment="Right"
+                        Margin="10,2"
+                        Foreground="Gray"
+                        Style="{StaticResource RLTMenu_b}"/>
+
+                <Button Content="Delete"
+                        Width="80"
+                        HorizontalAlignment="Right"
+                        Margin="10,2"
+                        Foreground="Gray"
+                        Style="{StaticResource RLTMenu_b}"/>
+
+            </StackPanel>
+            
+        </Border>
+        
         <DataGrid Grid.Row="1" Grid.Column="1"
                   Margin="10"
                   ItemsSource="{Binding ResourceModels}"

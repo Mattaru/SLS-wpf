@@ -27,7 +27,7 @@
         </Grid.ColumnDefinitions>
 
         <Border Grid.Row="0" Grid.ColumnSpan="2"
-                Background="#FF76B3BB">
+                Background="#FF76B3BB" MouseDown="Border_MouseDown">
 
             <Grid VerticalAlignment="Stretch">
 
@@ -50,7 +50,7 @@
                             Foreground="Gray"
                             BorderThickness="0"
                             FontWeight="ExtraBold"
-                            Command="{Binding MinimaizeAppWindow}"/>
+                            Command="{Binding MinimizeAppCommand}"/>
 
                     <Button Content="▢"
                             Height="20"
@@ -59,7 +59,7 @@
                             Foreground="Gray"
                             BorderThickness="0"
                             FontWeight="Bold"
-                            Command="{Binding MaximaizeAppWindow}"/>
+                            Command="{Binding MaximizeAppCommand}"/>
 
                     <Button Content="✕"
                             Height="20"
