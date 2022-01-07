@@ -1,12 +1,13 @@
-﻿using SLS.MVVM.Model;
+﻿using SLS.Core;
+using SLS.MVVM.Model;
 using System.Collections.ObjectModel;
 using System.Linq;
 
 namespace SLS.MVVM.ViewModel
 {
-    internal class ResourcesListVM
+    internal class ResourcesListVM : ObservableObject
     {
-        public ObservableCollection<ResourceModel> ResourceModels { get; }
+        public ObservableCollection<ResourceModel> ResourceCollection { get; }
 
         public ResourcesListVM()
         {
@@ -17,7 +18,7 @@ namespace SLS.MVVM.ViewModel
                 Password = $"Password {i}"
             });
 
-            ResourceModels = new ObservableCollection<ResourceModel>(resources);
+            ResourceCollection = new ObservableCollection<ResourceModel>(resources);
         }
     }
 }

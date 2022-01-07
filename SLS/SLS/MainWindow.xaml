@@ -22,8 +22,8 @@
         </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
             <ColumnDefinition Width="250"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
         <Border Grid.Row="0" Grid.ColumnSpan="2"
@@ -71,48 +71,19 @@
                             Command="{Binding CloseAppCommand}"/>
 
                 </StackPanel>
-                
+
             </Grid>
-            
+
         </Border>
 
-        <DataGrid Grid.Row="1" Grid.Column="0"
-                  ItemsSource="{Binding ResourceCollection}"
-                  AutoGenerateColumns="False"
-                  Visibility="Collapsed">
-
-            <DataGrid.Columns>
-                <DataGridTextColumn Header="Name"
-                                    Binding="{Binding Name}"
-                                    Width="*"/>
-
-                <DataGridTextColumn Header="Login"
-                                    Binding="{Binding Login}"
-                                    Width="*"/>
-
-                <DataGridTextColumn Header="Password"
-                                    Binding="{Binding Password}"
-                                    Width="*"/>
-
-                <DataGridTextColumn Header="Creation date"
-                                    Binding="{Binding CreationDate, StringFormat='hh:mm - dd.mm.yy'}"
-                                    Width="100"/>
-
-                <DataGridTextColumn Header="Last modification"
-                                    Binding="{Binding LastModificationDate, StringFormat='hh:mm - dd.mm.yy'}"
-                                    Width="100"/>
-            </DataGrid.Columns>
-            
-        </DataGrid>
-
-        <ContentControl Grid.Row="1" Grid.Column="0"
-                        Content="{Binding CurrentView}"/>
-
-        <Border Grid.Row="1" Grid.Column="1"
+        <Border Grid.Row="1" Grid.Column="0"
                 Background="#FF76B3BB">
-            
+
         </Border>
 
+        <ContentControl Grid.Row="1" Grid.Column="1"
+                        Content="{Binding CurrentView}"/>
+        
     </Grid>
     
 </Window>
