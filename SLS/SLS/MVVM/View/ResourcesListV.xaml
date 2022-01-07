@@ -24,8 +24,6 @@
             <ColumnDefinition Width="250"/>
         </Grid.ColumnDefinitions>
 
-        
-
         <Grid>
 
             <Grid.ColumnDefinitions>
@@ -43,7 +41,7 @@
                        Foreground="Gray"
                        FontSize="10"/>
 
-                <Label Content="{Binding ResourceCollection.Count}"
+                <Label Content="{Binding ResourceCollection.Count, UpdateSourceTrigger=PropertyChanged}"
                        Foreground="Gray"
                        Width="40"
                        FontSize="10"/>
@@ -74,7 +72,8 @@
                   RowStyle="{StaticResource RLTRow_dg}"
                   CellStyle="{StaticResource RLTCell_dg}"
                   RowHeaderStyle="{StaticResource RLTRowHeader_dg}"
-                  HorizontalScrollBarVisibility="Disabled">
+                  HorizontalScrollBarVisibility="Disabled"
+                  SelectedItem="{Binding SelectedResource}">
 
             <DataGrid.Columns>
                 
@@ -134,14 +133,16 @@
                         HorizontalAlignment="Left"
                         Margin="10,2"
                         Foreground="Gray"
-                        Style="{StaticResource RLTMenu_b}"/>
+                        Style="{StaticResource RLTMenu_b}"
+                        Command="{Binding AddEmptyRecource}"/>
 
                 <Button Content="Delete"
                         Width="80"
                         HorizontalAlignment="Left"
                         Margin="10,2"
                         Foreground="Gray"
-                        Style="{StaticResource RLTMenu_b}"/>
+                        Style="{StaticResource RLTMenu_b}"
+                        Command="{Binding RemoveResource}"/>
 
             </StackPanel>
 
