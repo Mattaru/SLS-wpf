@@ -8,8 +8,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Themes\" />
     <Folder Include="Services\" />
+    <Folder Include="Themes\HomeThemes\" />
   </ItemGroup>
 
 </Project>

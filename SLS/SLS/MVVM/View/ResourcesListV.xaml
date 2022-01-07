@@ -27,28 +27,53 @@
         <DataGrid Grid.Row="1" Grid.Column="1"
                   Margin="10"
                   ItemsSource="{Binding ResourceModels}"
-                  AutoGenerateColumns="False">
+                  Background="#CFCFCF"
+                  VerticalGridLinesBrush="Transparent"
+                  HorizontalGridLinesBrush="Transparent"
+                  RowBackground="#CFCFCF"
+                  AlternatingRowBackground="#FF63BECA"
+                  Foreground="#252525"
+                  FontWeight="Bold"
+                  HeadersVisibility="All"
+                  BorderThickness="0"
+                  AutoGenerateColumns="False"
+                  RowStyle="{StaticResource RLTRow_dg}"
+                  CellStyle="{StaticResource RLTCell_dg}"
+                  RowHeaderStyle="{StaticResource RLTRowHeader_dg}"
+                  HorizontalScrollBarVisibility="Disabled">
 
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Name"
                                     Binding="{Binding Name}"
-                                    Width="*"/>
+                                    Width="*"
+                                    HeaderStyle="{StaticResource RLTHeader_dg}"
+                                    FontWeight="Medium"/>
 
                 <DataGridTextColumn Header="Login"
                                     Binding="{Binding Login}"
-                                    Width="*"/>
+                                    Width="*"
+                                    HeaderStyle="{StaticResource RLTHeader_dg}"
+                                    FontWeight="Light"/>
 
                 <DataGridTextColumn Header="Password"
                                     Binding="{Binding Password}"
-                                    Width="*"/>
+                                    Width="*"
+                                    HeaderStyle="{StaticResource RLTHeader_dg}"
+                                    FontWeight="Light"/>
 
                 <DataGridTextColumn Header="Last modificated"
                                     Binding="{Binding LastModificationDate}"
-                                    Width="120"/>
+                                    Width="120"
+                                    HeaderStyle="{StaticResource RLTHeader_dg}"
+                                    IsReadOnly="True"
+                                    FontWeight="Light"/>
 
                 <DataGridTextColumn Header="Creation date"
                                     Binding="{Binding CreationDate}"
-                                    Width="120"/>
+                                    Width="120"
+                                    HeaderStyle="{StaticResource RLTHeader_dg}"
+                                    IsReadOnly="True"
+                                    FontWeight="Light"/>
             </DataGrid.Columns>
         </DataGrid>
 

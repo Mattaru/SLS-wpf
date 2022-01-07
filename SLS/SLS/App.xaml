@@ -8,6 +8,14 @@
     
     <Application.Resources>
         <ResourceDictionary>
+
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="./Themes/ResourceListThemes/RLTDataGrid/RLTCell_dg.xaml"/>
+                <ResourceDictionary Source="./Themes/ResourceListThemes/RLTDataGrid/RLTHeader_dg.xaml"/>
+                <ResourceDictionary Source="./Themes/ResourceListThemes/RLTDataGrid/RLTRow_dg.xaml"/>
+                <ResourceDictionary Source="./Themes/ResourceListThemes/RLTDataGrid/RLTRowHeader_dg.xaml"/>
+                <ResourceDictionary Source="./Themes/ResourceListThemes/RLTDataGrid/RLTScrollBar_dg.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
             
             <DataTemplate DataType="{x:Type vm:HomeVM}">
                 <v:HomeV/>
