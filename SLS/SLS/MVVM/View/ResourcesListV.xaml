@@ -31,7 +31,7 @@
                   VerticalGridLinesBrush="Transparent"
                   HorizontalGridLinesBrush="Transparent"
                   RowBackground="#CFCFCF"
-                  AlternatingRowBackground="#FF63BECA"
+                  AlternatingRowBackground="#FF76B3BB"
                   Foreground="#252525"
                   FontWeight="Bold"
                   HeadersVisibility="All"

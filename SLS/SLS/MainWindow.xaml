@@ -27,15 +27,16 @@
         </Grid.ColumnDefinitions>
 
         <Border Grid.Row="0" Grid.ColumnSpan="2"
-                Background="#252525">
+                Background="#FF76B3BB">
 
             <Grid VerticalAlignment="Stretch">
 
-                <Label Foreground="#CFCFCF"
+                <Label Foreground="#252525"
                        VerticalContentAlignment="Center"
                        HorizontalContentAlignment="Left"
                        Content="{Binding Title}"
-                       FontSize="12"/>
+                       FontSize="14"
+                       FontWeight="Bold"/>
 
                 <StackPanel Orientation="Horizontal"
                             HorizontalAlignment="Right"
@@ -108,7 +109,7 @@
                         Content="{Binding CurrentView}"/>
 
         <Border Grid.Row="1" Grid.Column="1"
-                Background="#252525">
+                Background="#FF76B3BB">
             
         </Border>
 
