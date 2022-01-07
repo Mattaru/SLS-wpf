@@ -33,6 +33,7 @@
             <Trigger Property="IsChecked" Value="True">
                 <Setter Property="Background" Value="#CFCFCF"/>
                 <Setter Property="Foreground" Value="#252525"/>
+                <Setter Property="IsEnabled" Value="False"/>
             </Trigger>
         </Style.Triggers>
 

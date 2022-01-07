@@ -70,6 +70,47 @@ namespace SLS.MVVM.ViewModel
 
         #endregion
 
+
+        #region SelectHomeView COMMAND
+
+        public ICommand SelectHomeView { get; }
+
+        private bool CanSelectHomeViewExecute(object p)
+        {
+            if (_currentView is HomeV)
+                return false;
+
+            return true;
+        }
+
+        private void OnSelectHomeViewExecuted(object p)
+        {
+            if (_currentView != null)
+                CurrentView = HomeV;
+        }
+
+        #endregion
+
+        #region SelectResourceListView COMMAND
+
+        public ICommand SelectResourceListView { get; }
+
+        private bool CanSelectResourceListViewExecute(object p)
+        {
+            if (_currentView is ResourcesListV)
+                return false;
+
+            return true;
+        }
+
+        private void OnSelectResourceListViewExecuted(object p)
+        {
+            if (_currentView != null)
+                CurrentView = ResourcesListV;
+        }
+
+        #endregion
+
         public MainVM()
         {
             #region Commands
@@ -78,9 +119,19 @@ namespace SLS.MVVM.ViewModel
             MaximizeAppCommand = new LambdaCommand(OnMaximizeAppCommandExecuted, CanMaximizeAppCommandExecute);
             MinimizeAppCommand = new LambdaCommand(OnMinimizeAppCommandExecuted, CanMinimizeAppCommandExecute);
 
+            SelectHomeView = new LambdaCommand(OnSelectHomeViewExecuted, CanSelectHomeViewExecute);
+            SelectResourceListView = new LambdaCommand(OnSelectResourceListViewExecuted, CanSelectResourceListViewExecute);
+
             #endregion
 
-            CurrentView = new HomeV();
+            #region Views
+
+            HomeV = new HomeV();
+            ResourcesListV = new ResourcesListV();
+
+            CurrentView = HomeV;
+
+            #endregion
         }
     }
 }

@@ -84,10 +84,13 @@
                         Margin="0,40">
                 
                 <RadioButton Tag="HOME"
-                             Style="{StaticResource MTNavigation_rb}"/>
+                             IsChecked="True"
+                             Style="{StaticResource MTNavigation_rb}"
+                             Command="{Binding SelectHomeView}"/>
                 
                 <RadioButton Tag="PASS LIST"
-                             Style="{StaticResource MTNavigation_rb}"/>
+                             Style="{StaticResource MTNavigation_rb}"
+                             Command="{Binding SelectResourceListView}"/>
                 
             </StackPanel>
             
