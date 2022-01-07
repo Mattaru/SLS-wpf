@@ -83,9 +83,11 @@
             <StackPanel Orientation="Vertical"
                         Margin="0,40">
                 
-                <RadioButton Content="Home"/>
+                <RadioButton Tag="HOME"
+                             Style="{StaticResource MTNavigation_rb}"/>
                 
-                <RadioButton Content="Pass list"/>
+                <RadioButton Tag="PASS LIST"
+                             Style="{StaticResource MTNavigation_rb}"/>
                 
             </StackPanel>
             
