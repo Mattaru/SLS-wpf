@@ -20,9 +20,9 @@ namespace SLS.MVVM.ViewModel
 
         // Views
 
-        public HomeV? HomeV { get; set; }
+        static HomeV? HomeView { get; set; }
 
-        public ResourcesListV? ResourcesListV { get; set; }
+        static ResourcesListV? ResourcesListView { get; set; }
 
         #region Current view
 
@@ -70,24 +70,13 @@ namespace SLS.MVVM.ViewModel
 
         #endregion
 
-
         #region SelectHomeView COMMAND
 
         public ICommand SelectHomeView { get; }
 
-        private bool CanSelectHomeViewExecute(object p)
-        {
-            if (_currentView is HomeV)
-                return false;
+        private bool CanSelectHomeViewExecute(object p) => true;
 
-            return true;
-        }
-
-        private void OnSelectHomeViewExecuted(object p)
-        {
-            if (_currentView != null)
-                CurrentView = HomeV;
-        }
+        private void OnSelectHomeViewExecuted(object p) => CurrentView = HomeView;
 
         #endregion
 
@@ -95,19 +84,9 @@ namespace SLS.MVVM.ViewModel
 
         public ICommand SelectResourceListView { get; }
 
-        private bool CanSelectResourceListViewExecute(object p)
-        {
-            if (_currentView is ResourcesListV)
-                return false;
+        private bool CanSelectResourceListViewExecute(object p) => true;
 
-            return true;
-        }
-
-        private void OnSelectResourceListViewExecuted(object p)
-        {
-            if (_currentView != null)
-                CurrentView = ResourcesListV;
-        }
+        private void OnSelectResourceListViewExecuted(object p) => CurrentView = ResourcesListView;
 
         #endregion
 
@@ -126,10 +105,10 @@ namespace SLS.MVVM.ViewModel
 
             #region Views
 
-            HomeV = new HomeV();
-            ResourcesListV = new ResourcesListV();
+            HomeView = new HomeV();
+            ResourcesListView = new ResourcesListV();
 
-            CurrentView = HomeV;
+            CurrentView = HomeView;
 
             #endregion
         }

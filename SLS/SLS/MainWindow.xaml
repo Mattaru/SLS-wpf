@@ -19,6 +19,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
+            <RowDefinition Height="60"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
@@ -28,16 +29,10 @@
         </Grid.ColumnDefinitions>
 
         <Border Grid.Row="0" Grid.ColumnSpan="2"
-                Background="#FF76B3BB" MouseDown="Border_MouseDown">
+                Background="#FF76B3BB"
+                MouseDown="Border_MouseDown">
 
             <Grid VerticalAlignment="Stretch">
-
-                <Label Foreground="#252525"
-                       VerticalContentAlignment="Center"
-                       HorizontalContentAlignment="Left"
-                       Content="{Binding Title}"
-                       FontSize="14"
-                       FontWeight="Bold"/>
 
                 <StackPanel Orientation="Horizontal"
                             HorizontalAlignment="Right"
@@ -77,27 +72,41 @@
 
         </Border>
 
-        <Border Grid.Row="1" Grid.Column="0"
+        <Border Grid.RowSpan="2" Grid.Column="0"
+                Background="#252525"
+                CornerRadius="0,4,4,4">
+
+            <Label Foreground="#CFCFCF"
+                   VerticalContentAlignment="Center"
+                   HorizontalContentAlignment="Left"
+                   Margin="20,0,0,0"
+                   Content="{Binding Title}"
+                   FontSize="20"
+                   FontWeight="Bold"/>
+
+        </Border>
+
+        <Border Grid.Row="2" Grid.Column="0"
                 Background="#FF76B3BB">
 
             <StackPanel Orientation="Vertical"
-                        Margin="0,40">
-                
-                <RadioButton Tag="HOME"
+                        Margin="0,0">
+
+                <RadioButton Tag="Home"
                              IsChecked="True"
-                             Style="{StaticResource MTNavigation_rb}"
-                             Command="{Binding SelectHomeView}"/>
-                
-                <RadioButton Tag="PASS LIST"
                              Style="{StaticResource MTNavigation_rb}"
                              Command="{Binding SelectResourceListView}"/>
                 
+                <RadioButton Tag="Passwords"
+                             Style="{StaticResource MTNavigation_rb}"
+                             Command="{Binding SelectHomeView}"/>
+
             </StackPanel>
             
         </Border>
 
-        <ContentControl Grid.Row="1" Grid.Column="1"
-                        Content="{Binding CurrentView}"/>
+        <ContentControl Grid.Row="1" Grid.RowSpan="2" Grid.Column="1"
+                        Content="{Binding CurrentView, UpdateSourceTrigger=PropertyChanged}"/>
         
     </Grid>
     
