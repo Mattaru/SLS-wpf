@@ -29,8 +29,15 @@
         </Grid.ColumnDefinitions>
 
         <Border Grid.Row="0" Grid.ColumnSpan="2"
-                Background="#FF76B3BB"
                 MouseDown="Border_MouseDown">
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0.2,3" StartPoint="0.7,0">
+                    <GradientStop Color="#FF76B3BB"
+                                              Offset="0"/>
+                    <GradientStop Color="#CFCFCF"
+                                              Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
 
             <Grid VerticalAlignment="Stretch">
 
@@ -76,13 +83,27 @@
                 Background="#252525"
                 CornerRadius="0,4,4,4">
 
-            <Label Foreground="#CFCFCF"
-                   VerticalContentAlignment="Center"
-                   HorizontalContentAlignment="Left"
-                   Margin="20,0,0,0"
-                   Content="{Binding Title}"
-                   FontSize="20"
-                   FontWeight="Bold"/>
+            <StackPanel Orientation="Vertical"
+                        VerticalAlignment="Center">
+                
+                <Label Foreground="#CFCFCF"
+                       VerticalContentAlignment="Center"
+                       HorizontalContentAlignment="Left"
+                       Margin="20,0,0,0"
+                       Padding="0"
+                       Content="{Binding AppTitle}"
+                       FontSize="20"
+                       FontWeight="Bold"/>
+
+                <Label Foreground="#FF76B3BB"
+                       VerticalContentAlignment="Center"
+                       HorizontalContentAlignment="Left"
+                       Margin="20,0,0,0"
+                       Padding="0"
+                       Content="{Binding AppSubtitle}"
+                       FontSize="10"/>
+
+            </StackPanel>
 
         </Border>
 

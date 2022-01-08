@@ -12,9 +12,17 @@ namespace SLS.MVVM.ViewModel
     {
         #region App Title
 
-        private string _title = "Default title.";
+        private string _appTitle = "Default title.";
 
-        public string Title { get => _title; set => Set<string>(ref _title, value); }
+        public string AppTitle { get => _appTitle; set => Set<string>(ref _appTitle, value); }
+
+        #endregion
+
+        #region App Subtitle
+
+        private string _appSubtitle = "Simple subtitle";
+
+        public string AppSubtitle { get => _appSubtitle; set => Set<string>(ref _appSubtitle, value); }
 
         #endregion
 
@@ -74,7 +82,12 @@ namespace SLS.MVVM.ViewModel
 
         public ICommand SelectHomeView { get; }
 
-        private bool CanSelectHomeViewExecute(object p) => true;
+        private bool CanSelectHomeViewExecute(object p)
+        {
+            if (CurrentView is HomeV)
+                return false;
+            return true;
+        }
 
         private void OnSelectHomeViewExecuted(object p) => CurrentView = HomeView;
 
@@ -84,7 +97,12 @@ namespace SLS.MVVM.ViewModel
 
         public ICommand SelectResourceListView { get; }
 
-        private bool CanSelectResourceListViewExecute(object p) => true;
+        private bool CanSelectResourceListViewExecute(object p)
+        {
+            if (CurrentView is ResourcesListV)
+                return false;
+            return true;
+        }
 
         private void OnSelectResourceListViewExecuted(object p) => CurrentView = ResourcesListView;
 
