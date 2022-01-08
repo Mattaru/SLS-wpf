@@ -132,7 +132,6 @@
                         Width="80"
                         HorizontalAlignment="Left"
                         Margin="10,2"
-                        Foreground="Gray"
                         Style="{StaticResource RLTMenu_b}"
                         Command="{Binding AddEmptyRecource}"/>
 
@@ -140,7 +139,6 @@
                         Width="80"
                         HorizontalAlignment="Left"
                         Margin="10,2"
-                        Foreground="Gray"
                         Style="{StaticResource RLTMenu_b}"
                         Command="{Binding RemoveResource}"/>
 

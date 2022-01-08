@@ -28,7 +28,7 @@
 
                             <Rectangle Fill="#FF76B3BB"
                                        x:Name="ButtomTextBoxRectangle"
-                                       Height="1"
+                                       Height="3"
                                        VerticalAlignment="Bottom"
                                        Visibility="Collapsed"/>
                         </Grid>

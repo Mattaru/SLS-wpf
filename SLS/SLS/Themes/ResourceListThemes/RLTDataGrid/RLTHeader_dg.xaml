@@ -5,8 +5,16 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type DataGridColumnHeader}">
-                    <Grid Margin="{TemplateBinding Padding}"
-                                Background="#FF76B3BB">
+                    <Grid Margin="{TemplateBinding Padding}" Height="25">
+                        <Grid.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#CFCFCF"
+                                              Offset="0"/>
+                                <GradientStop Color="#FF76B3BB"
+                                              Offset="1"/>
+                            </LinearGradientBrush>
+                        </Grid.Background>
+                        
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="Auto"/>

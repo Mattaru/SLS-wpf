@@ -43,8 +43,12 @@ namespace SLS.MVVM.ViewModel
 
         #endregion
 
+        public ObservableCollection<String> HomePageLoggCollection { get; }
+
         public HomeVM()
         {
+            var logs = Enumerable.Range(1, 100).Select(i => $"{DateTime.Now} | Event{i} | simple log string");
+            HomePageLoggCollection = new ObservableCollection<String>(logs);
         }
     }
 }

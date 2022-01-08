@@ -3,6 +3,7 @@
 
     <Style TargetType="{x:Type Button}" x:Key="RLTMenu_b">
         <Setter Property="FontSize" Value="10"/>
+        <Setter Property="Foreground" Value="Gray"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
@@ -10,8 +11,15 @@
                     <Border CornerRadius="4"
                             x:Name="Border"
                             Height="{TemplateBinding Height}"
-                            Width="{TemplateBinding Width}"
-                            Background="#CFCFCF">
+                            Width="{TemplateBinding Width}">
+                        <Border.Background>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="#CFCFCF"
+                                              Offset="0"/>
+                                <GradientStop Color="#FF76B3BB"
+                                              Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
 
                         <ContentPresenter Margin="2"
                             HorizontalAlignment="Center"
@@ -21,8 +29,18 @@
 
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter Property="Background" TargetName="Border" Value="#FF76B3BB"/>
+                            <Setter Property="Background" TargetName="Border">
+                                <Setter.Value>
+                                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                        <GradientStop Color="#353340"
+                                                      Offset="0"/>
+                                        <GradientStop Color="#CFCFCF"
+                                                      Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
                             <Setter Property="FontWeight" Value="Bold"/>
+                            <Setter Property="Foreground" Value="#252525"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
 
