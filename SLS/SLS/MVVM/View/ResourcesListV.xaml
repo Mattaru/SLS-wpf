@@ -58,7 +58,7 @@
         
         <DataGrid Grid.Row="1" Grid.Column="0"
                   Margin="10"
-                  ItemsSource="{Binding ResourceCollection}"
+                  ItemsSource="{Binding SelectedResourceCollection}"
                   Background="#CFCFCF"
                   VerticalGridLinesBrush="Transparent"
                   HorizontalGridLinesBrush="Transparent"
@@ -97,14 +97,14 @@
 
                 <DataGridTextColumn Header="Last modificated"
                                     Binding="{Binding LastModificationDate}"
-                                    Width="120"
+                                    Width="130"
                                     HeaderStyle="{StaticResource RLTHeader_dg}"
                                     IsReadOnly="True"
                                     FontWeight="Light"/>
 
                 <DataGridTextColumn Header="Creation date"
                                     Binding="{Binding CreationDate}"
-                                    Width="120"
+                                    Width="130"
                                     HeaderStyle="{StaticResource RLTHeader_dg}"
                                     IsReadOnly="True"
                                     FontWeight="Light"/>
@@ -120,6 +120,7 @@
 
                 <TextBox Height="30"
                          Margin="10,20"
+                         Text="{Binding FilterString, UpdateSourceTrigger=PropertyChanged}"
                          Tag="Search ..."
                          Background="#CFCFCF"
                          VerticalContentAlignment="Center"
