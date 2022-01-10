@@ -2,13 +2,13 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <Style TargetType="{x:Type DataGridRowHeader}" x:Key="RLTRowHeader_dg">
-        <Setter Property="Foreground" Value="DarkGreen"/>
+        <Setter Property="Foreground" Value="{StaticResource DarkGreenBrush}"/>
         <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type DataGridRowHeader}">
 
-                    <Grid Background="Transparent"
+                    <Grid Background="{StaticResource TrasparentBrush}"
                           Margin="0,0,4,0">
 
                         <StackPanel Orientation="Horizontal">
@@ -39,7 +39,7 @@
                             <Thumb.Style>
                                 <Style TargetType="{x:Type Thumb}">
                                     <Setter Property="Height" Value="8"/>
-                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Setter Property="Background" Value="{StaticResource TrasparentBrush}"/>
                                     <Setter Property="Cursor" Value="SizeNS"/>
                                     <Setter Property="Template">
                                         <Setter.Value>
@@ -57,7 +57,7 @@
                             <Thumb.Style>
                                 <Style TargetType="{x:Type Thumb}">
                                     <Setter Property="Height" Value="8"/>
-                                    <Setter Property="Background" Value="Transparent"/>
+                                    <Setter Property="Background" Value="{StaticResource TrasparentBrush}"/>
                                     <Setter Property="Cursor" Value="SizeNS"/>
                                     <Setter Property="Template">
                                         <Setter.Value>

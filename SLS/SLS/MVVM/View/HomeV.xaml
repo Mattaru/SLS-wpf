@@ -17,9 +17,9 @@
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-
+        
         <Grid Grid.Column="0"
-              Background="Transparent">
+              Background="{StaticResource TrasparentBrush}">
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="110"/>
@@ -34,7 +34,7 @@
                     <Label Content="Last actions:"
                            Margin="20,0"
                            VerticalAlignment="Bottom"
-                           Foreground="Gray"
+                           Foreground="{StaticResource SupportingBrush}"
                            FontSize="16"/>
 
                     <Button HorizontalAlignment="Right"
@@ -96,26 +96,23 @@
                 <Label Content="{Binding ResourceFormTitle, UpdateSourceTrigger=PropertyChanged}"
                        HorizontalContentAlignment="Left"
                        VerticalContentAlignment="Bottom"
-                       Foreground="#CFCFCF"
+                       Foreground="{StaticResource FirstPrimaryBrush}"
                        FontSize="16"/>
 
                 <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"
                          Tag="Name"
-                         Background="#353340"
                          VerticalContentAlignment="Center"
                          HorizontalContentAlignment="Center"
                          Style="{StaticResource HTForm_tb}"/>
 
                 <TextBox Text="{Binding Login, UpdateSourceTrigger=PropertyChanged}"
                          Tag="Login"
-                         Background="#353340"
                          VerticalContentAlignment="Center"
                          HorizontalContentAlignment="Center"
                          Style="{StaticResource HTForm_tb}"/>
 
                 <TextBox Text="{Binding Password, UpdateSourceTrigger=PropertyChanged}"
                          Tag="Password"
-                         Background="#353340"
                          VerticalContentAlignment="Center"
                          HorizontalContentAlignment="Center"
                          Style="{StaticResource HTForm_tb}"/>

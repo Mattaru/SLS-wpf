@@ -6,14 +6,14 @@
 
         <Style.Triggers>
             <Trigger Property="IsSelected" Value="True">
-                <Setter Property="Background" Value="#FF76B3BB"/>
-                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="Background" Value="{StaticResource SecondPrimaryBrush}"/>
+                <Setter Property="Foreground" Value="{StaticResource WhiteBrush}"/>
                 <Setter Property="BorderThickness" Value="0"/>
-                <Setter Property="BorderBrush" Value="Transparent"/>
+                <Setter Property="BorderBrush" Value="{StaticResource TrasparentBrush}"/>
                 <Setter Property="FontSize" Value="14"/>
             </Trigger>
             <Trigger Property="IsFocused" Value="True">
-                <Setter Property="BorderBrush" Value="#252525"/>
+                <Setter Property="BorderBrush" Value="{StaticResource SecondaryBrush}"/>
             </Trigger>
         </Style.Triggers>
     </Style>

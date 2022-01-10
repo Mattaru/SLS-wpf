@@ -11,7 +11,7 @@
         WindowStyle="None"
         AllowsTransparency="True"
         ResizeMode="CanResizeWithGrip"
-        Background="#CFCFCF">
+        Background="{StaticResource FirstPrimaryBrush}">
 
     <Window.DataContext>
         <vm:MainVM/>
@@ -50,8 +50,8 @@
                             Height="20"
                             Width="20"
                             Margin="0,0,0,2"
-                            Background="Transparent"
-                            Foreground="Gray"
+                            Background="{StaticResource TrasparentBrush}"
+                            Foreground="{StaticResource SupportingBrush}"
                             BorderThickness="0"
                             FontWeight="ExtraBold"
                             Command="{Binding MinimizeAppCommand}"/>
@@ -59,8 +59,8 @@
                     <Button Content="▢"
                             Height="20"
                             Width="20"
-                            Background="Transparent"
-                            Foreground="Gray"
+                            Background="{StaticResource TrasparentBrush}"
+                            Foreground="{StaticResource SupportingBrush}"
                             BorderThickness="0"
                             FontWeight="Bold"
                             Command="{Binding MaximizeAppCommand}"/>
@@ -68,8 +68,8 @@
                     <Button Content="✕"
                             Height="20"
                             Width="20"
-                            Background="Transparent"
-                            Foreground="Gray"
+                            Background="{StaticResource TrasparentBrush}"
+                            Foreground="{StaticResource SupportingBrush}"
                             BorderThickness="0"
                             FontWeight="Bold"
                             Command="{Binding CloseAppCommand}"/>
@@ -81,7 +81,7 @@
         </Border>
 
         <Border Grid.RowSpan="2" Grid.Column="0"
-                Background="#252525"
+                Background="{StaticResource SecondaryBrush}"
                 CornerRadius="0,4,4,4">
 
             <Grid>
@@ -109,7 +109,7 @@
                             VerticalAlignment="Top"
                             Margin="0,12">
 
-                    <Label Foreground="#CFCFCF"
+                    <Label Foreground="{StaticResource FirstPrimaryBrush}"
                            VerticalContentAlignment="Center"
                            HorizontalContentAlignment="Left"
                            Padding="0"
@@ -117,7 +117,7 @@
                            FontSize="20"
                            FontWeight="Bold"/>
 
-                    <Label Foreground="#FF76B3BB"
+                    <Label Foreground="{StaticResource SecondPrimaryBrush}"
                            VerticalContentAlignment="Center"
                            HorizontalContentAlignment="Left"
                            Padding="0"
@@ -133,7 +133,7 @@
         </Border>
 
         <Border Grid.Row="2" Grid.Column="0"
-                Background="#FF76B3BB">
+                Background="{StaticResource SecondPrimaryBrush}">
 
             <StackPanel Orientation="Vertical"
                         Margin="0,0">

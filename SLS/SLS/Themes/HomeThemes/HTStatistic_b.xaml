@@ -3,7 +3,7 @@
                     xmlns:fa="http://schemas.fontawesome.com/icons/">
 
     <Style TargetType="{x:Type Button}" x:Key="HTStatistic_b">
-        <Setter Property="Foreground" Value="#252525"/>
+        <Setter Property="Foreground" Value="{StaticResource SecondaryBrush}"/>
         <Setter Property="Opacity" Value="0.6"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -35,11 +35,11 @@
 
                             <fa:ImageAwesome Icon="Solid_ChevronRight"
                                              Height="15"
-                                             Foreground="Gray"/>
+                                             Foreground="{StaticResource SupportingBrush}"/>
                             
                             <fa:ImageAwesome Icon="Solid_ChevronRight"
                                              Height="15"
-                                             Foreground="Gray"/>
+                                             Foreground="{StaticResource SupportingBrush}"/>
 
                         </StackPanel>
                         

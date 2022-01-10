@@ -3,7 +3,7 @@
 
     <Style TargetType="{x:Type Button}" x:Key="RLTMenu_b">
         <Setter Property="FontSize" Value="10"/>
-        <Setter Property="Foreground" Value="Gray"/>
+        <Setter Property="Foreground" Value="{StaticResource SupportingBrush}"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
@@ -32,7 +32,7 @@
                             <Setter Property="Background" TargetName="Border">
                                 <Setter.Value>
                                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                        <GradientStop Color="#353340"
+                                        <GradientStop Color="#252525"
                                                       Offset="0"/>
                                         <GradientStop Color="#CFCFCF"
                                                       Offset="1"/>
@@ -40,7 +40,7 @@
                                 </Setter.Value>
                             </Setter>
                             <Setter Property="FontWeight" Value="Bold"/>
-                            <Setter Property="Foreground" Value="#252525"/>
+                            <Setter Property="Foreground" Value="{StaticResource SecondaryBrush}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
 

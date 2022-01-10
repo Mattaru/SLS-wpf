@@ -10,7 +10,7 @@
 
                     <Border CornerRadius="4"
                             x:Name="FormBorder"
-                            Background="#CFCFCF"
+                            Background="{StaticResource FirstPrimaryBrush}"
                             Margin="0,5,0,5">
 
                         <Grid>
@@ -23,11 +23,11 @@
                                    Content="{TemplateBinding Tag}"
                                    VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
                                    HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                   Foreground="Gray"
+                                   Foreground="{StaticResource SupportingBrush}"
                                    IsHitTestVisible="False"
                                    Visibility="Collapsed"/>
 
-                            <Rectangle Fill="#FF76B3BB"
+                            <Rectangle Fill="{StaticResource SecondPrimaryBrush}"
                                        x:Name="ButtomTextBoxRectangle"
                                        Height="2"
                                        VerticalAlignment="Bottom"

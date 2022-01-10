@@ -1,9 +1,6 @@
 ﻿using SLS.Core;
 using SLS.Infrastucture.Commands;
-using SLS.MVVM.Model;
 using SLS.MVVM.View;
-using System.Collections.ObjectModel;
-using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 
