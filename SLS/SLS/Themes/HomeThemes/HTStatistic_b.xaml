@@ -13,7 +13,7 @@
                             x:Name="Border"
                             Height="{TemplateBinding Height}"
                             Width="{TemplateBinding Width}"
-                            BorderThickness="2,1,0,1"
+                            BorderThickness="1,0.5,0,0.5"
                             BorderBrush="Gray">
                         <Border.Background>
                             <LinearGradientBrush EndPoint="0.2,1" StartPoint="0.7,0">

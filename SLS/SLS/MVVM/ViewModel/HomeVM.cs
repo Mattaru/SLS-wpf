@@ -11,6 +11,10 @@ namespace SLS.MVVM.ViewModel
 {
     internal class HomeVM : ObservableObject
     {
+        //Propertys
+
+        public ObservableCollection<String> HomePageLoggCollection { get; }
+
         #region ResourceFormTitle
 
         private string? _resourceFormTitle = "Just default Title";
@@ -42,8 +46,6 @@ namespace SLS.MVVM.ViewModel
         public string Password { get => _password; set => Set<string>(ref _password, value); }
 
         #endregion
-
-        public ObservableCollection<String> HomePageLoggCollection { get; }
 
         public HomeVM()
         {

@@ -28,7 +28,11 @@
             <DataTemplate DataType="{x:Type vm:HomeVM}">
                 <v:HomeV/>
             </DataTemplate>
-            
+
+            <DataTemplate DataType="{x:Type vm:ResourcesListVM}">
+                <v:ResourcesListV/>
+            </DataTemplate>
+
         </ResourceDictionary>
     </Application.Resources>
     

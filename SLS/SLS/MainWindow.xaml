@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" mc:Ignorable="d"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:fa="http://schemas.fontawesome.com/icons/"
         xmlns:local="clr-namespace:SLS"
         xmlns:vm="clr-namespace:SLS.MVVM.ViewModel"
         Height="650" Width="1200"
@@ -83,27 +84,51 @@
                 Background="#252525"
                 CornerRadius="0,4,4,4">
 
-            <StackPanel Orientation="Vertical"
-                        VerticalAlignment="Center">
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <fa:ImageAwesome Icon="Brands_Adversal"
+                                 Height="60"
+                                 HorizontalAlignment="Right"
+                                 Margin="10">
+                    <fa:ImageAwesome.Foreground>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF76B3BB"
+                                              Offset="0"/>
+                            <GradientStop Color="#CFCFCF"
+                                              Offset="1"/>
+                        </LinearGradientBrush>
+                    </fa:ImageAwesome.Foreground>
+                </fa:ImageAwesome>
+
+                <StackPanel Grid.Column="1" Orientation="Vertical"
+                            VerticalAlignment="Top"
+                            Margin="0,12">
+
+                    <Label Foreground="#CFCFCF"
+                           VerticalContentAlignment="Center"
+                           HorizontalContentAlignment="Left"
+                           Padding="0"
+                           Content="{Binding AppTitle}"
+                           FontSize="20"
+                           FontWeight="Bold"/>
+
+                    <Label Foreground="#FF76B3BB"
+                           VerticalContentAlignment="Center"
+                           HorizontalContentAlignment="Left"
+                           Padding="0"
+                           Content="{Binding AppSubtitle}"
+                           FontSize="10"/>
+
+                </StackPanel>
                 
-                <Label Foreground="#CFCFCF"
-                       VerticalContentAlignment="Center"
-                       HorizontalContentAlignment="Left"
-                       Margin="20,0,0,0"
-                       Padding="0"
-                       Content="{Binding AppTitle}"
-                       FontSize="20"
-                       FontWeight="Bold"/>
-
-                <Label Foreground="#FF76B3BB"
-                       VerticalContentAlignment="Center"
-                       HorizontalContentAlignment="Left"
-                       Margin="20,0,0,0"
-                       Padding="0"
-                       Content="{Binding AppSubtitle}"
-                       FontSize="10"/>
-
-            </StackPanel>
+            </Grid>
+            
+            
 
         </Border>
 

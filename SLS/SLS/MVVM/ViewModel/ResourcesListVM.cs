@@ -12,7 +12,9 @@ namespace SLS.MVVM.ViewModel
 {
     internal class ResourcesListVM : ObservableObject
     {
-        public ObservableCollection<ResourceModel> ResourceCollection { get; }
+        // Propertys
+
+        public ObservableCollection<ResourceModel> Resources { get; }
 
         #region SelectedResource
 
@@ -24,7 +26,7 @@ namespace SLS.MVVM.ViewModel
 
         #region FilterString
 
-        private string _filterString;
+        private string? _filterString;
 
         public string FilterString 
         {
@@ -56,7 +58,7 @@ namespace SLS.MVVM.ViewModel
 
         private bool CanAddEmptyRecourceExecute(object p) => true;
 
-        private void OnAddEmptyRecourceExecuted(object p) => ResourceCollection.Add(new ResourceModel());
+        private void OnAddEmptyRecourceExecuted(object p) => Resources.Add(new ResourceModel());
 
         #endregion
 
@@ -66,7 +68,7 @@ namespace SLS.MVVM.ViewModel
 
         private bool CanRemoveResourceExecute(object p) => _SelectedResource != null;
 
-        private void OnRemoveResourceExecuted(object p) => ResourceCollection.Remove(SelectedResource);
+        private void OnRemoveResourceExecuted(object p) => Resources.Remove(SelectedResource);
 
         #endregion
 
@@ -85,11 +87,10 @@ namespace SLS.MVVM.ViewModel
                 Login = $"Login {i}",
                 Password = $"Password {i}"
             });
-
-            ResourceCollection = new ObservableCollection<ResourceModel>(resources);
+            Resources = new ObservableCollection<ResourceModel>(resources);
 
             // Filter for 'Search'
-            _selectedResourceCollection.Source = ResourceCollection;
+            _selectedResourceCollection.Source = Resources;
             OnPropertyChnged(nameof(SelectedResourceCollection));
             _selectedResourceCollection.Filter += ResourceCollectionSearchFilter;
         }

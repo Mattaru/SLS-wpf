@@ -1,5 +1,6 @@
 ﻿using SLS.Core;
 using SLS.Infrastucture.Commands;
+using SLS.MVVM.Model;
 using SLS.MVVM.View;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -10,6 +11,22 @@ namespace SLS.MVVM.ViewModel
 {
     internal class MainVM : ObservableObject
     {
+        // Views
+
+        private readonly HomeV? HomeView;
+
+        private readonly ResourcesListV? ResourcesListView;
+
+        #region Current view
+
+        static object _currentView;
+
+        public object CurrentView { get => _currentView; set => Set(ref _currentView, value); }
+
+        #endregion
+
+        // General propertys
+
         #region App Title
 
         private string _appTitle = "Default title.";
@@ -23,20 +40,6 @@ namespace SLS.MVVM.ViewModel
         private string _appSubtitle = "Simple subtitle";
 
         public string AppSubtitle { get => _appSubtitle; set => Set<string>(ref _appSubtitle, value); }
-
-        #endregion
-
-        // Views
-
-        static HomeV? HomeView { get; set; }
-
-        static ResourcesListV? ResourcesListView { get; set; }
-
-        #region Current view
-
-        static object _currentView;
-
-        public object CurrentView { get => _currentView; set => Set(ref _currentView, value); }
 
         #endregion
 
