@@ -89,7 +89,11 @@ namespace SLS.MVVM.ViewModel
             return true;
         }
 
-        private void OnSelectHomeViewCommandExecuted(object p) => CurrentView = HomeView;
+        private void OnSelectHomeViewCommandExecuted(object p) 
+        {
+            CurrentView = HomeView;
+            OnPropertyChnged(nameof(CurrentView));
+        }
 
         #endregion
 
@@ -104,7 +108,11 @@ namespace SLS.MVVM.ViewModel
             return true;
         }
 
-        private void OnSelectResourceListViewCommandExecuted(object p) => CurrentView = ResourcesListView;
+        private void OnSelectResourceListViewCommandExecuted(object p) 
+        {
+            CurrentView = ResourcesListView;
+            OnPropertyChnged(nameof(CurrentView));
+        } 
 
         #endregion
 

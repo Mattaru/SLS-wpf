@@ -8,11 +8,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\SideBlock.jpg" />
+    <None Remove="Images\SourceListSide.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Services\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="FontAwesome5" Version="2.1.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\SideBlock.jpg" />
+    <Resource Include="Images\SourceListSide.jpg" />
   </ItemGroup>
 
 </Project>

@@ -76,8 +76,10 @@
 
         </Grid>
         
-        <Grid Grid.Column="1"
-              Background="#252525">
+        <Grid Grid.Column="1">
+            <Grid.Background>
+                <ImageBrush ImageSource="/Images/SideBlock.jpg"/>
+            </Grid.Background>
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*"/>

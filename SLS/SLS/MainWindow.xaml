@@ -139,11 +139,11 @@
                 <RadioButton Tag="Home"
                              IsChecked="True"
                              Style="{StaticResource MTNavigation_rb_Home}"
-                             Command="{Binding SelectResourceListViewCommand}"/>
+                             Command="{Binding SelectHomeViewCommand}"/>
 
                 <RadioButton Tag="Password"
                              Style="{StaticResource MTNavigation_rb_List}"
-                             Command="{Binding SelectHomeViewCommand}"/>
+                             Command="{Binding SelectResourceListViewCommand}"/>
 
             </StackPanel>
             
