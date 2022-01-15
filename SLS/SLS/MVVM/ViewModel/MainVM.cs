@@ -42,7 +42,7 @@ namespace SLS.MVVM.ViewModel
 
         // Commands
 
-        #region CloseAppCommand COMMAND
+        #region CloseAppCommand
 
         public ICommand CloseAppCommand { get; }
 
@@ -52,7 +52,7 @@ namespace SLS.MVVM.ViewModel
 
         #endregion
 
-        #region MaximizeAppCommand COMMAND
+        #region MaximizeAppCommand
 
         public ICommand MaximizeAppCommand { get; }
 
@@ -68,7 +68,7 @@ namespace SLS.MVVM.ViewModel
 
         #endregion
 
-        #region MinimizeAppCommand COMMAND
+        #region MinimizeAppCommand
 
         public ICommand MinimizeAppCommand { get; }
 
@@ -78,33 +78,33 @@ namespace SLS.MVVM.ViewModel
 
         #endregion
 
-        #region SelectHomeView COMMAND
+        #region SelectHomeViewCommand
 
-        public ICommand SelectHomeView { get; }
+        public ICommand SelectHomeViewCommand { get; }
 
-        private bool CanSelectHomeViewExecute(object p)
+        private bool CanSelectHomeViewCommandExecute(object p)
         {
             if (CurrentView is HomeV)
                 return false;
             return true;
         }
 
-        private void OnSelectHomeViewExecuted(object p) => CurrentView = HomeView;
+        private void OnSelectHomeViewCommandExecuted(object p) => CurrentView = HomeView;
 
         #endregion
 
-        #region SelectResourceListView COMMAND
+        #region SelectResourceListView
 
-        public ICommand SelectResourceListView { get; }
+        public ICommand SelectResourceListViewCommand { get; }
 
-        private bool CanSelectResourceListViewExecute(object p)
+        private bool CanSelectResourceListViewCommandExecute(object p)
         {
             if (CurrentView is ResourcesListV)
                 return false;
             return true;
         }
 
-        private void OnSelectResourceListViewExecuted(object p) => CurrentView = ResourcesListView;
+        private void OnSelectResourceListViewCommandExecuted(object p) => CurrentView = ResourcesListView;
 
         #endregion
 
@@ -116,8 +116,8 @@ namespace SLS.MVVM.ViewModel
             MaximizeAppCommand = new LambdaCommand(OnMaximizeAppCommandExecuted, CanMaximizeAppCommandExecute);
             MinimizeAppCommand = new LambdaCommand(OnMinimizeAppCommandExecuted, CanMinimizeAppCommandExecute);
 
-            SelectHomeView = new LambdaCommand(OnSelectHomeViewExecuted, CanSelectHomeViewExecute);
-            SelectResourceListView = new LambdaCommand(OnSelectResourceListViewExecuted, CanSelectResourceListViewExecute);
+            SelectHomeViewCommand = new LambdaCommand(OnSelectHomeViewCommandExecuted, CanSelectHomeViewCommandExecute);
+            SelectResourceListViewCommand = new LambdaCommand(OnSelectResourceListViewCommandExecuted, CanSelectResourceListViewCommandExecute);
 
             #endregion
 

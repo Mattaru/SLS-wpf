@@ -128,8 +128,6 @@
                 
             </Grid>
             
-            
-
         </Border>
 
         <Border Grid.Row="2" Grid.Column="0"
@@ -141,11 +139,11 @@
                 <RadioButton Tag="Home"
                              IsChecked="True"
                              Style="{StaticResource MTNavigation_rb_Home}"
-                             Command="{Binding SelectResourceListView}"/>
+                             Command="{Binding SelectResourceListViewCommand}"/>
 
                 <RadioButton Tag="Password"
                              Style="{StaticResource MTNavigation_rb_List}"
-                             Command="{Binding SelectHomeView}"/>
+                             Command="{Binding SelectHomeViewCommand}"/>
 
             </StackPanel>
             
