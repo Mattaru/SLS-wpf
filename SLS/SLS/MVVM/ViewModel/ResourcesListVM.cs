@@ -52,23 +52,23 @@ namespace SLS.MVVM.ViewModel
 
         // Commands
 
-        #region AddEmptyRecource COMMAND
+        #region AddEmptyRecourceCommand
 
-        public ICommand AddEmptyRecource { get; }
+        public ICommand AddEmptyRecourceCommand { get; }
 
-        private bool CanAddEmptyRecourceExecute(object p) => true;
+        private bool CanAddEmptyRecourceCommandExecute(object p) => true;
 
-        private void OnAddEmptyRecourceExecuted(object p) => Resources.Add(new ResourceModel());
+        private void OnAddEmptyRecourceCommandExecuted(object p) => Resources.Add(new ResourceModel());
 
         #endregion
 
-        #region RemoveResource COMMAND
+        #region RemoveResourceCommand
 
-        public ICommand RemoveResource { get; }
+        public ICommand RemoveResourceCommand { get; }
 
-        private bool CanRemoveResourceExecute(object p) => _SelectedResource != null;
+        private bool CanRemoveResourceCommandExecute(object p) => _SelectedResource != null;
 
-        private void OnRemoveResourceExecuted(object p) => Resources.Remove(SelectedResource);
+        private void OnRemoveResourceCommandExecuted(object p) => Resources.Remove(SelectedResource);
 
         #endregion
 
@@ -76,8 +76,8 @@ namespace SLS.MVVM.ViewModel
         {
             #region Commands
 
-            AddEmptyRecource = new LambdaCommand(OnAddEmptyRecourceExecuted, CanAddEmptyRecourceExecute);
-            RemoveResource = new LambdaCommand(OnRemoveResourceExecuted, CanRemoveResourceExecute);
+            AddEmptyRecourceCommand = new LambdaCommand(OnAddEmptyRecourceCommandExecuted, CanAddEmptyRecourceCommandExecute);
+            RemoveResourceCommand = new LambdaCommand(OnRemoveResourceCommandExecuted, CanRemoveResourceCommandExecute);
 
             #endregion
 

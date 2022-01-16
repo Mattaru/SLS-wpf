@@ -6,7 +6,7 @@
              xmlns:fa="http://schemas.fontawesome.com/icons/"
              xmlns:local="clr-namespace:SLS.MVVM.View"
              xmlns:vm="clr-namespace:SLS.MVVM.ViewModel"
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="620" d:DesignWidth="950">
     
     <Grid>
 
@@ -33,20 +33,58 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <StackPanel Grid.ColumnSpan="3"
+            <StackPanel Grid.Column="0"
+                        Orientation="Horizontal"
+                        Margin="8,0,0,2"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center">
+
+                <Button Width="15"
+                        Margin="0,0,4,0"
+                        VerticalContentAlignment="Center"
+                        BorderThickness="0"
+                        ToolTip="Show as table"
+                        Background="{StaticResource TrasparentBrush}">
+                    
+                    <fa:ImageAwesome Icon="Solid_List"
+                                     Height="10"
+                                     Foreground="{StaticResource SupportingBrush}"/>
+                    
+                </Button>
+
+                <Button Width="15"
+                        Margin="0,0,4,0"
+                        VerticalContentAlignment="Center"
+                        BorderThickness="0"
+                        ToolTip="Show as list"
+                        Background="{StaticResource TrasparentBrush}">
+
+                    <fa:ImageAwesome Icon="Solid_ThList"
+                                     Height="10"
+                                     Foreground="{StaticResource SupportingBrush}"/>
+
+                </Button>
+
+            </StackPanel>
+            
+            <StackPanel Grid.Column="1" Grid.ColumnSpan="2"
                         Margin="0,0,0,2"
                         Orientation="Horizontal"
                         HorizontalAlignment="Right">
 
-                <Label Content="Count:"
-                       Foreground="{StaticResource SupportingBrush}"
-                       FontSize="10"/>
+                <StackPanel Orientation="Horizontal"
+                            Margin="6,0">
+                    
+                    <Label Content="Count:"
+                           Foreground="{StaticResource SupportingBrush}"
+                           FontSize="10"/>
 
-                <Label Content="{Binding SelectedResourceCollection.Count, UpdateSourceTrigger=PropertyChanged}"
-                       Foreground="{StaticResource SupportingBrush}"
-                       Width="40"
-                       FontSize="10"/>
-
+                    <Label Content="{Binding SelectedResourceCollection.Count, UpdateSourceTrigger=PropertyChanged}"
+                           Foreground="{StaticResource SupportingBrush}"
+                           FontSize="10"/>
+                    
+                </StackPanel>
+                
             </StackPanel>
             
             <Rectangle Grid.Column="1"
@@ -137,14 +175,14 @@
                         HorizontalAlignment="Left"
                         Margin="10,2"
                         Style="{StaticResource RLTMenu_b}"
-                        Command="{Binding AddEmptyRecource}"/>
+                        Command="{Binding AddEmptyRecourceCommand}"/>
 
                 <Button Content="Delete"
                         Width="80"
                         HorizontalAlignment="Left"
                         Margin="10,2"
                         Style="{StaticResource RLTMenu_b}"
-                        Command="{Binding RemoveResource}"/>
+                        Command="{Binding RemoveResourceCommand}"/>
                 
             </StackPanel>
 
