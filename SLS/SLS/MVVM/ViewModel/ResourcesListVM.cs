@@ -50,6 +50,22 @@ namespace SLS.MVVM.ViewModel
 
         #endregion
 
+        #region DataGridVisibility
+
+        private string _dataGridVisibility;
+
+        public string DataGridVisibility { get => _dataGridVisibility; set => Set(ref _dataGridVisibility, value); }
+
+        #endregion
+
+        #region ListBoxVisibility
+
+        private string _listBoxVisibility;
+
+        public string ListBoxVisibility { get => _listBoxVisibility; set => Set(ref _listBoxVisibility, value); }
+
+        #endregion
+
         // Commands
 
         #region AddEmptyRecourceCommand
@@ -72,12 +88,59 @@ namespace SLS.MVVM.ViewModel
 
         #endregion
 
+        #region DataGridChangeVisibilityCommand
+
+        public ICommand DataGridChangeVisibilityCommand { get; }
+
+        private bool CanDataGridChangeVisibilityCommandExecute(object p) => true;
+
+        private void OnDataGridChangeVisibilityCommandExecuted(object p) 
+        {
+            if (_listBoxVisibility == "Visible")
+            {
+                _listBoxVisibility = "Collapsed";
+                _dataGridVisibility = "Visible";
+                OnPropertyChnged(nameof(DataGridVisibility));
+                OnPropertyChnged(nameof(ListBoxVisibility));
+            }
+        }
+
+        #endregion
+
+        #region ListBoxChangeVisibilityCommand
+
+        public ICommand ListBoxChangeVisibilityCommand { get; }
+
+        private bool CanListBoxChangeVisibilityCommandExecute(object p) => true;
+
+        private void OnListBoxChangeVisibilityCommandExecuted(object p) 
+        {
+            if (_dataGridVisibility == "Visible")
+            {
+                _dataGridVisibility = "Collapsed";
+                _listBoxVisibility = "Visible";
+                OnPropertyChnged(nameof(ListBoxVisibility));
+                OnPropertyChnged(nameof(DataGridVisibility));
+            }
+        }
+
+        #endregion
+
         public ResourcesListVM()
         {
             #region Commands
 
             AddEmptyRecourceCommand = new LambdaCommand(OnAddEmptyRecourceCommandExecuted, CanAddEmptyRecourceCommandExecute);
             RemoveResourceCommand = new LambdaCommand(OnRemoveResourceCommandExecuted, CanRemoveResourceCommandExecute);
+            DataGridChangeVisibilityCommand = new LambdaCommand(OnDataGridChangeVisibilityCommandExecuted, CanDataGridChangeVisibilityCommandExecute);
+            ListBoxChangeVisibilityCommand = new LambdaCommand(OnListBoxChangeVisibilityCommandExecuted, CanListBoxChangeVisibilityCommandExecute);
+
+            #endregion
+
+            #region Set default properties
+
+            _dataGridVisibility = "Collapsed";
+            _listBoxVisibility = "Visible";
 
             #endregion
 

@@ -44,7 +44,8 @@
                         VerticalContentAlignment="Center"
                         BorderThickness="0"
                         ToolTip="Show as table"
-                        Background="{StaticResource TrasparentBrush}">
+                        Background="{StaticResource TrasparentBrush}"
+                        Command="{Binding DataGridChangeVisibilityCommand}">
                     
                     <fa:ImageAwesome Icon="Solid_List"
                                      Height="10"
@@ -57,7 +58,8 @@
                         VerticalContentAlignment="Center"
                         BorderThickness="0"
                         ToolTip="Show as list"
-                        Background="{StaticResource TrasparentBrush}">
+                        Background="{StaticResource TrasparentBrush}"
+                        Command="{Binding ListBoxChangeVisibilityCommand}">
 
                     <fa:ImageAwesome Icon="Solid_ThList"
                                      Height="10"
@@ -94,8 +96,100 @@
                        Height="1"/>
 
         </Grid>
+
+        <ListBox Grid.Row="1"
+                 ItemsSource="{Binding SelectedResourceCollection}"
+                 Visibility="{Binding}"
+                 Background="{StaticResource TrasparentBrush}"
+                 Margin="10"
+                 BorderThickness="0"
+                 HorizontalContentAlignment="Stretch"
+                 ScrollViewer.VerticalScrollBarVisibility="Disabled">
+
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid HorizontalAlignment="Stretch"
+                          Height="120">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="250"/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+
+                        <Border Grid.Column="0"
+                                Background="{StaticResource SupportingBrush}"
+                                Opacity="0.4"
+                                CornerRadius="4,0,0,4">
+
+                            <Grid Margin="10,10,10,0"
+                                        VerticalAlignment="Top"
+                                        HorizontalAlignment="Stretch">
+
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="60"/>
+                                    <RowDefinition Height="16"/>
+                                    <RowDefinition Height="16"/>
+                                </Grid.RowDefinitions>
+                                
+                                
+                                <TextBox Grid.Row="0" Text="{Binding Name}"
+                                         Background="{StaticResource TrasparentBrush}"
+                                         Margin="0,0,0,20"
+                                         BorderThickness="0"
+                                         VerticalAlignment="Center"
+                                         HorizontalContentAlignment="Left"
+                                         FontSize="20"
+                                         FontWeight="Bold"/>
+
+                                <StackPanel Grid.Row="1" Orientation="Horizontal"
+                                            VerticalAlignment="Center"
+                                            HorizontalAlignment="Right">
+
+                                    <Label Content="Creation date:"
+                                           FontSize="10"
+                                           Padding="6,0"/>
+
+                                    <Label Content="{Binding CreationDate}"
+                                           Background="{StaticResource TrasparentBrush}"
+                                           HorizontalContentAlignment="Right"
+                                           FontSize="10"
+                                           Padding="0"/>
+                                    
+                                </StackPanel>
+
+                                <StackPanel Grid.Row="2" Orientation="Horizontal"
+                                            HorizontalAlignment="Right">
+
+                                    <Label Content="Last changed:"
+                                           FontSize="10"
+                                           Padding="6,0"/>
+
+                                    <Label Content ="{Binding LastModificationDate}"
+                                           Background="{StaticResource TrasparentBrush}"
+                                           BorderThickness="0"
+                                           HorizontalContentAlignment="Right"
+                                           FontSize="10"
+                                           Padding="0"/>
+
+                                </StackPanel>
+
+                            </Grid>
+                            
+                        </Border>
+
+                        <Border Grid.Column="1"
+                                Background="{StaticResource SecondPrimaryBrush}"
+                                Margin="4,0,0,0"
+                                CornerRadius="0,4,4,0"/>
+
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+            
+        </ListBox>
         
         <DataGrid Grid.Row="1" Grid.Column="0"
+                  Visibility="{Binding DataGridVisibility, UpdateSourceTrigger=PropertyChanged}"
                   Margin="10"
                   ItemsSource="{Binding SelectedResourceCollection}"
                   Background="{StaticResource FirstPrimaryBrush}"
