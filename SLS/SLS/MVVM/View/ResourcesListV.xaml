@@ -101,7 +101,7 @@
                  ItemsSource="{Binding SelectedResourceCollection}"
                  Visibility="{Binding ListBoxVisibility}"
                  Background="{StaticResource TrasparentBrush}"
-                 Margin="10"
+                 Margin="10,10,4,0"
                  BorderThickness="0"
                  HorizontalContentAlignment="Stretch"
                  ScrollViewer.VerticalScrollBarVisibility="Disabled">
@@ -248,23 +248,132 @@
                             
                         </Border>
 
-                        <Border Grid.Column="2"
-                                Margin="4">
+                        <Border Grid.Column="2">
 
                             <Grid>
-
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="10"/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition/>
                                     <ColumnDefinition/>
                                 </Grid.ColumnDefinitions>
 
-                                <StackPanel Grid.Column="0">
+                                <Grid Grid.Row="1" Grid.Column="0"
+                                      Margin="4,0,4,4">
 
-                                    <Label Content="Login"/>
-                                    <Label Content="Password"/>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+                                    
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="20"/>
+                                        <ColumnDefinition Width="40"/>
+                                        <ColumnDefinition Width="120"/>
+                                        <ColumnDefinition Width="20"/>
+                                    </Grid.ColumnDefinitions>
+                                    
+                                    <Border Grid.RowSpan="2"
+                                            Grid.Column="0" Grid.ColumnSpan="4"
+                                            Background="{StaticResource FirstPrimaryBrush}"
+                                            CornerRadius="4"/>
+                                    
+                                    <Rectangle Grid.Row="0"
+                                               Grid.Column="1" Grid.ColumnSpan="2"
+                                               Height="1"
+                                               Fill="{StaticResource TrasparentBrush}"
+                                               Stroke="{StaticResource SupportingBrush}"
+                                               VerticalAlignment="Bottom"
+                                               StrokeThickness="1"/>
 
-                                </StackPanel>
+                                    <StackPanel Grid.Row="0"
+                                                Grid.Column="0" Grid.ColumnSpan="3"
+                                                Margin="8,0"
+                                                Orientation="Horizontal"
+                                                VerticalAlignment="Bottom"
+                                                HorizontalAlignment="Left">
+                                        
+                                        <TextBlock Text="L"
+                                                   Foreground="{StaticResource SecondPrimaryBrush}"
+                                                   FontSize="30"
+                                                   FontWeight="Bold"/>
+                                        
+                                        <TextBlock Text="oggin"
+                                                   VerticalAlignment="Center"/>
+                                        
+                                    </StackPanel>
 
+                                    <TextBox Grid.Row="1"
+                                            Grid.Column="1" Grid.ColumnSpan="2"
+                                            Text="{Binding Login}"
+                                            Background="{StaticResource TrasparentBrush}"
+                                            Margin="0,4"
+                                            Padding="4"
+                                            BorderThickness="0"
+                                            FontSize="14"
+                                             FontWeight="Bold"/>
+
+                                </Grid>
+
+                                <Grid Grid.Row="1" Grid.Column="1"
+                                      Margin="4,0,4,4">
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="20"/>
+                                        <ColumnDefinition Width="40"/>
+                                        <ColumnDefinition Width="120"/>
+                                        <ColumnDefinition Width="20"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Border Grid.RowSpan="2"
+                                            Grid.Column="0" Grid.ColumnSpan="4"
+                                            Background="{StaticResource FirstPrimaryBrush}"
+                                            CornerRadius="4"/>
+
+                                    <Rectangle Grid.Row="0"
+                                               Grid.Column="1" Grid.ColumnSpan="2"
+                                               Height="1"
+                                               Fill="{StaticResource TrasparentBrush}"
+                                               Stroke="{StaticResource SupportingBrush}"
+                                               VerticalAlignment="Bottom"
+                                               StrokeThickness="1"/>
+
+                                    <StackPanel Grid.Row="0"
+                                                Grid.Column="0" Grid.ColumnSpan="3" 
+                                                Margin="8,0"
+                                                Orientation="Horizontal"
+                                                VerticalAlignment="Bottom"
+                                                HorizontalAlignment="Left">
+
+                                        <TextBlock Text="P"
+                                                   Foreground="{StaticResource SecondPrimaryBrush}"
+                                                   FontSize="30"
+                                                   FontWeight="Bold"/>
+
+                                        <TextBlock Text="assword"
+                                                   VerticalAlignment="Center"/>
+
+                                    </StackPanel>
+
+                                    <TextBox Grid.Row="1"
+                                            Grid.Column="1" Grid.ColumnSpan="2"
+                                            Text="{Binding Password}"
+                                            Background="{StaticResource TrasparentBrush}"
+                                            Margin="0,4"
+                                            Padding="4"
+                                            BorderThickness="0"
+                                            FontSize="14"
+                                             FontWeight="Bold"/>
+
+                                </Grid>
                             </Grid>
                             
                         </Border>

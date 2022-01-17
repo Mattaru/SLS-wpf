@@ -147,7 +147,7 @@ namespace SLS.MVVM.ViewModel
 
             var resources = TestingData.GetResourceList();
             Resources = new ObservableCollection<ResourceModel>(resources);
-
+            
             // Filter for 'Search'
             SetSearchingFilters();
         }
