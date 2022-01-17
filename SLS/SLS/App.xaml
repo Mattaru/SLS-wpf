@@ -23,6 +23,7 @@
                 <ResourceDictionary Source="./Themes/ResourceListThemes/RLTDataGrid/RLTRow_dg.xaml"/>
                 <ResourceDictionary Source="./Themes/ResourceListThemes/RLTDataGrid/RLTRowHeader_dg.xaml"/>
                 <ResourceDictionary Source="./Themes/ResourceListThemes/RLTDataGrid/RLTScrollBar_dg.xaml"/>
+                <ResourceDictionary Source="./Themes/ResourceListThemes/RLTListBoxItem.xaml"/>
                 <ResourceDictionary Source="./Themes/ResourceListThemes/RLTSearch_tb.xaml"/>
                 <ResourceDictionary Source="./Themes/ResourceListThemes/RLTMenu_b.xaml"/>
             </ResourceDictionary.MergedDictionaries>

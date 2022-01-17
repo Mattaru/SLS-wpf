@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <None Remove="Images\SideBlock.jpg" />
-    <None Remove="Images\SourceListSide.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,7 +23,6 @@
 
   <ItemGroup>
     <Resource Include="Images\SideBlock.jpg" />
-    <Resource Include="Images\SourceListSide.jpg" />
   </ItemGroup>
 
 </Project>
