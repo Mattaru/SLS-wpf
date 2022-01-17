@@ -117,35 +117,68 @@
                         </Grid.ColumnDefinitions>
 
                         <Border Grid.Column="0"
-                                Background="{StaticResource SupportingBrush}"
+                                Background="{StaticResource TrasparentBrush}"
                                 Opacity="0.4"
                                 CornerRadius="4,0,0,4">
 
-                            <Grid Margin="10,10,10,0"
-                                        VerticalAlignment="Top"
-                                        HorizontalAlignment="Stretch">
+                            <Grid Margin="0"
+                                  VerticalAlignment="Top"
+                                  HorizontalAlignment="Stretch">
 
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="60"/>
+                                    <RowDefinition Height="20"/>
+                                    <RowDefinition Height="40"/>
+                                    <RowDefinition Height="16"/>
                                     <RowDefinition Height="16"/>
                                     <RowDefinition Height="16"/>
                                 </Grid.RowDefinitions>
-                                
-                                
-                                <TextBox Grid.Row="0" Text="{Binding Name}"
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="20"/>
+                                    <ColumnDefinition Width="40"/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="20"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Border Grid.Row="1" Grid.RowSpan="4"
+                                        Grid.Column="1" Grid.ColumnSpan="2"
+                                        Background="{StaticResource SupportingBrush}"
+                                        CornerRadius="4"/>
+
+                                <Border Grid.Row="0" Grid.RowSpan="2"
+                                        Grid.Column="0" Grid.ColumnSpan="2"
+                                        Background="{StaticResource SecondaryBrush}"
+                                        CornerRadius="4"/>
+
+                                <TextBox Grid.Row="0" Grid.RowSpan="2"
+                                         Grid.Column="1" Grid.ColumnSpan="2"
+                                         Text="{Binding Name}"
                                          Background="{StaticResource TrasparentBrush}"
-                                         Margin="0,0,0,20"
                                          BorderThickness="0"
                                          VerticalAlignment="Center"
                                          HorizontalContentAlignment="Left"
                                          FontSize="20"
-                                         FontWeight="Bold"/>
+                                         FontWeight="Bold">
+                                    <TextBox.Foreground>
+                                        <LinearGradientBrush EndPoint="0.6,0" StartPoint="0.0,1">
+                                            <GradientStop Color="#FF76B3BB"
+                                              Offset="0"/>
+                                            <GradientStop Color="#CFCFCF"
+                                              Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </TextBox.Foreground>
+                                    
+                                    
+                                </TextBox>
 
-                                <StackPanel Grid.Row="1" Orientation="Horizontal"
+                                <StackPanel Grid.Row="2"
+                                            Grid.Column="1" Grid.ColumnSpan="2"
+                                            Margin="30,0"
+                                            Orientation="Horizontal"
                                             VerticalAlignment="Center"
                                             HorizontalAlignment="Right">
 
-                                    <Label Content="Creation date:"
+                                    <Label Content="Created:"
                                            FontSize="10"
                                            Padding="6,0"/>
 
@@ -157,10 +190,14 @@
                                     
                                 </StackPanel>
 
-                                <StackPanel Grid.Row="2" Orientation="Horizontal"
+                                <StackPanel Grid.Row="3"
+                                            Grid.Column="1" Grid.ColumnSpan="2"
+                                            Margin="30,0"
+                                            Orientation="Horizontal"
+                                            VerticalAlignment="Center"
                                             HorizontalAlignment="Right">
 
-                                    <Label Content="Last changed:"
+                                    <Label Content="Changed:"
                                            FontSize="10"
                                            Padding="6,0"/>
 
