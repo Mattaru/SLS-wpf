@@ -1,6 +1,7 @@
 ﻿using SLS.Core;
 using SLS.Infrastucture.Commands;
 using SLS.MVVM.Model;
+using SLS.TstingData;
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -144,15 +145,15 @@ namespace SLS.MVVM.ViewModel
 
             #endregion
 
-            var resources = Enumerable.Range(1, 100).Select(i => new ResourceModel
-            {
-                Name = $"Name {i}",
-                Login = $"Login {i}",
-                Password = $"Password {i}"
-            });
+            var resources = TestingData.GetResourceList();
             Resources = new ObservableCollection<ResourceModel>(resources);
 
             // Filter for 'Search'
+            SetSearchingFilters();
+        }
+
+        private void SetSearchingFilters()
+        {
             _selectedResourceCollection.Source = Resources;
             OnPropertyChnged(nameof(SelectedResourceCollection));
             _selectedResourceCollection.Filter += ResourceCollectionSearchFilter;
@@ -180,6 +181,6 @@ namespace SLS.MVVM.ViewModel
             if (resource.Password.Contains(text, StringComparison.OrdinalIgnoreCase)) return;
 
             e.Accepted = false;
-        }
+        } 
     }
 }

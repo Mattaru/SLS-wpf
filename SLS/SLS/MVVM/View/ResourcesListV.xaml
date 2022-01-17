@@ -43,20 +43,6 @@
                         Margin="0,0,4,0"
                         VerticalContentAlignment="Center"
                         BorderThickness="0"
-                        ToolTip="Show as table"
-                        Background="{StaticResource TrasparentBrush}"
-                        Command="{Binding DataGridChangeVisibilityCommand}">
-                    
-                    <fa:ImageAwesome Icon="Solid_List"
-                                     Height="10"
-                                     Foreground="{StaticResource SupportingBrush}"/>
-                    
-                </Button>
-
-                <Button Width="15"
-                        Margin="0,0,4,0"
-                        VerticalContentAlignment="Center"
-                        BorderThickness="0"
                         ToolTip="Show as list"
                         Background="{StaticResource TrasparentBrush}"
                         Command="{Binding ListBoxChangeVisibilityCommand}">
@@ -65,6 +51,20 @@
                                      Height="10"
                                      Foreground="{StaticResource SupportingBrush}"/>
 
+                </Button>
+                
+                <Button Width="15"
+                        Margin="0,0,4,0"
+                        VerticalContentAlignment="Center"
+                        BorderThickness="0"
+                        ToolTip="Show as table"
+                        Background="{StaticResource TrasparentBrush}"
+                        Command="{Binding DataGridChangeVisibilityCommand}">
+                    
+                    <fa:ImageAwesome Icon="Solid_List"
+                                     Height="10"
+                                     Foreground="{StaticResource SupportingBrush}"/>
+                    
                 </Button>
 
             </StackPanel>
@@ -99,7 +99,7 @@
 
         <ListBox Grid.Row="1"
                  ItemsSource="{Binding SelectedResourceCollection}"
-                 Visibility="{Binding}"
+                 Visibility="{Binding ListBoxVisibility}"
                  Background="{StaticResource TrasparentBrush}"
                  Margin="10"
                  BorderThickness="0"
@@ -112,15 +112,28 @@
                           Height="120">
 
                         <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="250"/>
+                            <ColumnDefinition Width="64"/>
+                            <ColumnDefinition Width="186"/>
                             <ColumnDefinition/>
                         </Grid.ColumnDefinitions>
 
-                        <Border Grid.Column="0"
-                                Background="{StaticResource TrasparentBrush}"
-                                Opacity="0.4"
-                                CornerRadius="4,0,0,4">
+                        <Border Grid.Column="1" Grid.ColumnSpan="2"
+                                CornerRadius="4">
+                            <Border.Background>
+                                <LinearGradientBrush EndPoint="0.6,5" StartPoint="0.0,1">
+                                    <GradientStop Color="#FF76B3BB"
+                                              Offset="0"/>
+                                    <GradientStop Color="Transparent"
+                                              Offset="1"/>
+                                </LinearGradientBrush>
+                            </Border.Background>
+                        </Border>
 
+                        <Border Grid.Column="0" Grid.ColumnSpan="2"
+                                Background="{StaticResource TrasparentBrush}"
+                                Opacity="1"
+                                CornerRadius="4,0,0,4">
+                            
                             <Grid Margin="0"
                                   VerticalAlignment="Top"
                                   HorizontalAlignment="Stretch">
@@ -131,14 +144,17 @@
                                     <RowDefinition Height="16"/>
                                     <RowDefinition Height="16"/>
                                     <RowDefinition Height="16"/>
+                                    <RowDefinition Height="12"/>
                                 </Grid.RowDefinitions>
 
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="20"/>
                                     <ColumnDefinition Width="40"/>
+                                    <ColumnDefinition Width="190"/>
                                     <ColumnDefinition/>
-                                    <ColumnDefinition Width="20"/>
                                 </Grid.ColumnDefinitions>
+
+                                
 
                                 <Border Grid.Row="1" Grid.RowSpan="4"
                                         Grid.Column="1" Grid.ColumnSpan="2"
@@ -151,7 +167,8 @@
                                         CornerRadius="4"/>
 
                                 <TextBox Grid.Row="0" Grid.RowSpan="2"
-                                         Grid.Column="1" Grid.ColumnSpan="2"
+                                         Grid.Column="0" Grid.ColumnSpan="3"
+                                         Margin="10,4,10,0"
                                          Text="{Binding Name}"
                                          Background="{StaticResource TrasparentBrush}"
                                          BorderThickness="0"
@@ -167,7 +184,6 @@
                                               Offset="1"/>
                                         </LinearGradientBrush>
                                     </TextBox.Foreground>
-                                    
                                     
                                 </TextBox>
 
@@ -186,8 +202,17 @@
                                            Background="{StaticResource TrasparentBrush}"
                                            HorizontalContentAlignment="Right"
                                            FontSize="10"
-                                           Padding="0"/>
-                                    
+                                           Padding="0">
+                                        <Label.Foreground>
+                                            <LinearGradientBrush EndPoint="0.6,0" StartPoint="0.0,1">
+                                                <GradientStop Color="#CFCFCF"
+                                              Offset="0"/>
+                                                <GradientStop Color="#FF76B3BB"
+                                              Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Label.Foreground>
+                                    </Label>
+
                                 </StackPanel>
 
                                 <StackPanel Grid.Row="3"
@@ -206,7 +231,16 @@
                                            BorderThickness="0"
                                            HorizontalContentAlignment="Right"
                                            FontSize="10"
-                                           Padding="0"/>
+                                           Padding="0">
+                                        <Label.Foreground>
+                                            <LinearGradientBrush EndPoint="0.6,0" StartPoint="0.0,1">
+                                                <GradientStop Color="#CFCFCF"
+                                              Offset="0"/>
+                                                <GradientStop Color="#FF76B3BB"
+                                              Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Label.Foreground>
+                                    </Label>
 
                                 </StackPanel>
 
@@ -214,11 +248,27 @@
                             
                         </Border>
 
-                        <Border Grid.Column="1"
-                                Background="{StaticResource SecondPrimaryBrush}"
-                                Margin="4,0,0,0"
-                                CornerRadius="0,4,4,0"/>
+                        <Border Grid.Column="2"
+                                Margin="4">
 
+                            <Grid>
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+
+                                <StackPanel Grid.Column="0">
+
+                                    <Label Content="Login"/>
+                                    <Label Content="Password"/>
+
+                                </StackPanel>
+
+                            </Grid>
+                            
+                        </Border>
+                        
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
