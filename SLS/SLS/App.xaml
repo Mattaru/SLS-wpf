@@ -13,7 +13,7 @@
                 <ResourceDictionary Source="./Themes/Basic/Brushes.xaml"/>
                 
                 <ResourceDictionary Source="./Themes/MainThemes/MTNavigation_rb.xaml"/>
-
+                
                 <ResourceDictionary Source="./Themes/HomeThemes/HTStatistic_b.xaml"/>
                 <ResourceDictionary Source="./Themes/HomeThemes/HTForm_tb.xaml"/>
                 <ResourceDictionary Source="./Themes/HomeThemes/HTForm_b.xaml"/>
@@ -23,6 +23,7 @@
                 <ResourceDictionary Source="./Themes/ResourceListThemes/RLTDataGrid/RLTRow_dg.xaml"/>
                 <ResourceDictionary Source="./Themes/ResourceListThemes/RLTDataGrid/RLTRowHeader_dg.xaml"/>
                 <ResourceDictionary Source="./Themes/ResourceListThemes/RLTDataGrid/RLTScrollBar_dg.xaml"/>
+                <ResourceDictionary Source="./Themes/ResourceListThemes/MTSwitchList_rb.xaml"/>
                 <ResourceDictionary Source="./Themes/ResourceListThemes/RLTListBoxItem.xaml"/>
                 <ResourceDictionary Source="./Themes/ResourceListThemes/RLTSearch_tb.xaml"/>
                 <ResourceDictionary Source="./Themes/ResourceListThemes/RLTMenu_b.xaml"/>

@@ -72,6 +72,7 @@
                                 <TextBox Grid.Row="0" Grid.RowSpan="2"
                                          Grid.Column="0" Grid.ColumnSpan="3"
                                          Margin="10,4,10,0"
+                                         x:Name="ResourceName"
                                          Text="{Binding Name}"
                                          Background="{StaticResource TrasparentBrush}"
                                          BorderThickness="0"
@@ -175,7 +176,7 @@
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="20"/>
                                         <ColumnDefinition Width="40"/>
-                                        <ColumnDefinition Width="120"/>
+                                        <ColumnDefinition MinWidth="120"/>
                                         <ColumnDefinition Width="20"/>
                                     </Grid.ColumnDefinitions>
 
@@ -232,7 +233,7 @@
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="20"/>
                                         <ColumnDefinition Width="40"/>
-                                        <ColumnDefinition Width="120"/>
+                                        <ColumnDefinition MinWidth="120"/>
                                         <ColumnDefinition Width="20"/>
                                     </Grid.ColumnDefinitions>
 
@@ -287,12 +288,23 @@
                         <Trigger Property="IsSelected" Value="True">
                             <Setter Property="Opacity" TargetName="ListBoxContainer" Value="1"/>
                             <Setter Property="IsEnabled" TargetName="ListBoxContainer" Value="True"/>
+                            <Setter Property="Foreground" TargetName="ResourceName">
+                                <Setter.Value>
+                                    <LinearGradientBrush EndPoint="0.6,0" StartPoint="0.0,1">
+                                        <GradientStop Color="#FF1E7219"
+                                              Offset="0"/>
+                                        <GradientStop Color="#CFCFCF"
+                                              Offset="1"/>
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
                         </Trigger>
                     </ControlTemplate.Triggers>
 
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+
     </Style>
     
 </ResourceDictionary>

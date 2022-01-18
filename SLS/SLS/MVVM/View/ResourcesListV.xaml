@@ -29,7 +29,7 @@
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
-                <ColumnDefinition Width="500"/>
+                <ColumnDefinition MinWidth="500"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
@@ -39,33 +39,12 @@
                         HorizontalAlignment="Left"
                         VerticalAlignment="Center">
 
-                <Button Width="15"
-                        Margin="0,0,4,0"
-                        VerticalContentAlignment="Center"
-                        BorderThickness="0"
-                        ToolTip="Show as list"
-                        Background="{StaticResource TrasparentBrush}"
-                        Command="{Binding ListBoxChangeVisibilityCommand}">
+                <RadioButton Style="{StaticResource MTSwitchList_rb}"
+                             Command="{Binding ListBoxChangeVisibilityCommand}"
+                             IsChecked="True"/>
 
-                    <fa:ImageAwesome Icon="Solid_ThList"
-                                     Height="10"
-                                     Foreground="{StaticResource SupportingBrush}"/>
-
-                </Button>
-                
-                <Button Width="15"
-                        Margin="0,0,4,0"
-                        VerticalContentAlignment="Center"
-                        BorderThickness="0"
-                        ToolTip="Show as table"
-                        Background="{StaticResource TrasparentBrush}"
-                        Command="{Binding DataGridChangeVisibilityCommand}">
-                    
-                    <fa:ImageAwesome Icon="Solid_List"
-                                     Height="10"
-                                     Foreground="{StaticResource SupportingBrush}"/>
-                    
-                </Button>
+                <RadioButton Style="{StaticResource MTSwitchGrid_rb}"
+                             Command="{Binding DataGridChangeVisibilityCommand}"/>
 
             </StackPanel>
             
@@ -105,6 +84,7 @@
                  BorderThickness="0"
                  HorizontalContentAlignment="Stretch"
                  ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                 ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                  ItemContainerStyle="{StaticResource RLTListBoxItem}"/>
 
         <DataGrid Grid.Row="1" Grid.Column="0"
@@ -128,7 +108,7 @@
                   SelectedItem="{Binding SelectedResource}">
 
             <DataGrid.Columns>
-                
+
                 <DataGridTextColumn Header="Name"
                                     Binding="{Binding Name}"
                                     Width="*"
@@ -160,9 +140,9 @@
                                     HeaderStyle="{StaticResource RLTHeader_dg}"
                                     IsReadOnly="True"
                                     FontWeight="Light"/>
-                
+
             </DataGrid.Columns>
-            
+
         </DataGrid>
 
         <Border Grid.RowSpan="3" Grid.Column="1"
