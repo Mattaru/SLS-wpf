@@ -14,20 +14,12 @@ namespace SLS
             app.Run();
         }
 
-        public static IHostBuilder CreateHostBuilder(string[] args)
-        {
-            var builder = Host.CreateDefaultBuilder(args);
-
-            builder.UseContentRoot(Environment.CurrentDirectory);
-            builder.ConfigureAppConfiguration((host, cfg) => 
-            {
-                cfg.SetBasePath(Environment.CurrentDirectory);
-                cfg.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true);
-            });
-
-            builder.ConfigureServices(App.ConfigureServices);
-
-            return builder;
-        }
+        public static IHostBuilder CreateHostBuilder(string[] args) => 
+            Host.CreateDefaultBuilder(args)
+                .UseContentRoot(App.CurrentDirectory)
+                .ConfigureAppConfiguration((host, cfg) => cfg
+                    .SetBasePath(App.CurrentDirectory)
+                    .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true))
+                .ConfigureServices(App.ConfigureServices);
     }
 }
