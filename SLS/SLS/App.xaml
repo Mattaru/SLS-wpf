@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:SLS"
              xmlns:vm="clr-namespace:SLS.MVVM.ViewModel"
              xmlns:v="clr-namespace:SLS.MVVM.View"
-             StartupUri="MainWindow.xaml">
+             StartupUri="MVVM/View/Windows/MainWindow.xaml">
     
     <Application.Resources>
         <ResourceDictionary>
@@ -28,7 +28,9 @@
                 <ResourceDictionary Source="./Themes/ResourceListThemes/RLTSearch_tb.xaml"/>
                 <ResourceDictionary Source="./Themes/ResourceListThemes/RLTMenu_b.xaml"/>
             </ResourceDictionary.MergedDictionaries>
-            
+
+            <vm:ViewModelLocator x:Key="VMLocator"/>
+
             <DataTemplate DataType="{x:Type vm:HomeVM}">
                 <v:HomeV/>
             </DataTemplate>

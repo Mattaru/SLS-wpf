@@ -5,7 +5,6 @@ using SLS.TstingData;
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Linq;
 using System.Windows.Data;
 using System.Windows.Input;
 
@@ -13,6 +12,8 @@ namespace SLS.MVVM.ViewModel
 {
     internal class ResourcesListVM : ObservableObject
     {
+        public MainVM? MainVM { get; internal set; }
+
         // Propertys
 
         public ObservableCollection<ResourceModel> Resources { get; }
@@ -73,7 +74,7 @@ namespace SLS.MVVM.ViewModel
 
         public ICommand AddEmptyRecourceCommand { get; }
 
-        private bool CanAddEmptyRecourceCommandExecute(object p) => true;
+        private bool CanAddEmptyRecourceCommandExecute(object p) => Resources != null;
 
         private void OnAddEmptyRecourceCommandExecuted(object p) => Resources.Add(new ResourceModel());
 
@@ -93,17 +94,15 @@ namespace SLS.MVVM.ViewModel
 
         public ICommand DataGridChangeVisibilityCommand { get; }
 
-        private bool CanDataGridChangeVisibilityCommandExecute(object p) => true;
+        private bool CanDataGridChangeVisibilityCommandExecute(object p) => _listBoxVisibility == "Visible";
 
         private void OnDataGridChangeVisibilityCommandExecuted(object p) 
         {
-            if (_listBoxVisibility == "Visible")
-            {
-                _listBoxVisibility = "Collapsed";
-                _dataGridVisibility = "Visible";
-                OnPropertyChnged(nameof(DataGridVisibility));
-                OnPropertyChnged(nameof(ListBoxVisibility));
-            }
+            _listBoxVisibility = "Collapsed";
+            _dataGridVisibility = "Visible";
+            OnPropertyChnged(nameof(DataGridVisibility));
+            OnPropertyChnged(nameof(ListBoxVisibility));
+            
         }
 
         #endregion
@@ -112,17 +111,16 @@ namespace SLS.MVVM.ViewModel
 
         public ICommand ListBoxChangeVisibilityCommand { get; }
 
-        private bool CanListBoxChangeVisibilityCommandExecute(object p) => true;
+        private bool CanListBoxChangeVisibilityCommandExecute(object p) => _dataGridVisibility == "Visible";
 
         private void OnListBoxChangeVisibilityCommandExecuted(object p) 
         {
-            if (_dataGridVisibility == "Visible")
-            {
-                _dataGridVisibility = "Collapsed";
-                _listBoxVisibility = "Visible";
-                OnPropertyChnged(nameof(ListBoxVisibility));
-                OnPropertyChnged(nameof(DataGridVisibility));
-            }
+            
+            _dataGridVisibility = "Collapsed";
+            _listBoxVisibility = "Visible";
+            OnPropertyChnged(nameof(ListBoxVisibility));
+            OnPropertyChnged(nameof(DataGridVisibility));
+           
         }
 
         #endregion
@@ -147,14 +145,14 @@ namespace SLS.MVVM.ViewModel
 
             var resources = TestingData.GetResourceList();
             Resources = new ObservableCollection<ResourceModel>(resources);
-            
+
             // Filter for 'Search'
-            SetSearchingFilters();
+            SetSearchingFilters(Resources);
         }
 
-        private void SetSearchingFilters()
+        private void SetSearchingFilters(ObservableCollection<ResourceModel> Collection)
         {
-            _selectedResourceCollection.Source = Resources;
+            _selectedResourceCollection.Source = Collection;
             OnPropertyChnged(nameof(SelectedResourceCollection));
             _selectedResourceCollection.Filter += ResourceCollectionSearchFilter;
         }

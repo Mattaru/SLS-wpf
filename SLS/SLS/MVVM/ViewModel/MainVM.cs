@@ -1,5 +1,6 @@
 ﻿using SLS.Core;
 using SLS.Infrastucture.Commands;
+using SLS.MVVM.Model;
 using SLS.MVVM.View;
 using System.Windows;
 using System.Windows.Input;
@@ -16,9 +17,9 @@ namespace SLS.MVVM.ViewModel
 
         #region Current view
 
-        static object _currentView;
+        static object? _currentView;
 
-        public object CurrentView { get => _currentView; set => Set(ref _currentView, value); }
+        public object? CurrentView { get => _currentView; set => Set(ref _currentView, value); }
 
         #endregion
 
@@ -116,8 +117,15 @@ namespace SLS.MVVM.ViewModel
 
         #endregion
 
-        public MainVM()
+        public MainVM(HomeVM Home, ResourcesListVM ResourceList)
         {
+            #region View models
+
+            Home.MainVM = this;
+            ResourceList.MainVM = this;
+
+            #endregion
+
             #region Commands
 
             CloseAppCommand = new LambdaCommand(OnCloseAppCommandExecuted, CanCloseAppCommandExecute);
@@ -137,6 +145,8 @@ namespace SLS.MVVM.ViewModel
             CurrentView = HomeView;
 
             #endregion
+
+            
         }
     }
 }

@@ -4,14 +4,10 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:SLS.MVVM.View"
-             xmlns:vm="clr-namespace:SLS.MVVM.ViewModel"
-             d:DesignHeight="620" d:DesignWidth="950">
+             d:DesignHeight="620" d:DesignWidth="950"
+             DataContext="{Binding HomeViewModel, Source={StaticResource VMLocator}}">
 
     <Grid>
-
-        <Grid.DataContext>
-            <vm:HomeVM/>
-        </Grid.DataContext>
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="2*"/>

@@ -7,6 +7,8 @@ namespace SLS.MVVM.ViewModel
 {
     internal class HomeVM : ObservableObject
     {
+        public MainVM? MainVM { get; internal set; }
+
         //Propertys
 
         public ObservableCollection<String> HomePageLoggCollection { get; }

@@ -5,19 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:fa="http://schemas.fontawesome.com/icons/"
         xmlns:local="clr-namespace:SLS"
-        xmlns:vm="clr-namespace:SLS.MVVM.ViewModel"
         Height="650" Width="1200"
         MinHeight="650" MinWidth="1200"
         WindowStyle="None"
         AllowsTransparency="True"
         ResizeMode="CanResizeWithGrip"
-        Background="{StaticResource FirstPrimaryBrush}">
-
-    <Window.DataContext>
-        <vm:MainVM/>
-    </Window.DataContext>
+        Background="{StaticResource FirstPrimaryBrush}"
+        DataContext="{Binding MainViewModel, Source={StaticResource VMLocator}}">
 
     <Grid>
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
             <RowDefinition Height="60"/>

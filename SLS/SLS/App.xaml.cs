@@ -40,6 +40,7 @@ namespace SLS
 
         public static void ConfigureServices(HostBuilderContext host, IServiceCollection services)
         {
+            services.AddSingleton<MainVM>();
             services.AddSingleton<HomeVM>();
             services.AddSingleton<ResourcesListVM>();
         }
