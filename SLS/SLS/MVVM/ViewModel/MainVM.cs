@@ -145,8 +145,6 @@ namespace SLS.MVVM.ViewModel
             CurrentView = HomeView;
 
             #endregion
-
-            
         }
     }
 }
