@@ -18,12 +18,12 @@ namespace SLS.Services
 
         private const string CHANGED_RESOURCE_MSG = "Resource has been changed.";
 
-        public static void AddedResource(string senderName) => new LoggModel(senderName, ADD_ACTION, ADD_RESOURCE_MSG);
+        public static LoggModel AddedResource(string senderName) => new LoggModel(senderName, ADD_ACTION, ADD_RESOURCE_MSG);
 
-        public static void AddedEmptyResource() => new LoggModel(ADD_ACTION, ADD_RESOURCE_MSG);
+        public static LoggModel AddedEmptyResource() => new LoggModel(ADD_ACTION, ADD_RESOURCE_MSG);
 
-        public static void RemovedResource(string senderName) => new LoggModel(senderName, REMOVE_ACTION, REMOVE_RESOURCE_MSG);
+        public static LoggModel RemovedResource(string senderName) => new LoggModel(senderName, REMOVE_ACTION, REMOVE_RESOURCE_MSG);
 
-        public static void ChangedResource(string senderName) => new LoggModel(senderName, CHANGED_ACTION, CHANGED_RESOURCE_MSG);
+        public static LoggModel ChangedResource(string senderName) => new LoggModel(senderName, CHANGED_ACTION, CHANGED_RESOURCE_MSG);
     }
 }
