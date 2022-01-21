@@ -38,12 +38,8 @@ namespace SLS
             __Host = null;
         }
 
-        public static void ConfigureServices(HostBuilderContext host, IServiceCollection services)
-        {
-            services.AddSingleton<MainVM>();
-            services.AddSingleton<HomeVM>();
-            services.AddSingleton<ResourcesListVM>();
-        }
+        public static void ConfigureServices(HostBuilderContext host, IServiceCollection services) => services
+            .RegistrationViewModels();
 
         public static string? CurrentDirectory => IsDesignMode 
             ? Path.GetDirectoryName(GetSourceCodePath())
