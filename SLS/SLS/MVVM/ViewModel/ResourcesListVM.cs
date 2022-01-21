@@ -1,6 +1,7 @@
 ﻿using SLS.Core;
 using SLS.Infrastucture.Commands;
 using SLS.MVVM.Model;
+using SLS.Services;
 using SLS.TstingData;
 using System;
 using System.Collections.ObjectModel;
@@ -76,7 +77,11 @@ namespace SLS.MVVM.ViewModel
 
         private bool CanAddEmptyRecourceCommandExecute(object p) => Resources != null;
 
-        private void OnAddEmptyRecourceCommandExecuted(object p) => Resources.Add(new ResourceModel());
+        private void OnAddEmptyRecourceCommandExecuted(object p)
+        {
+            Resources.Add(new ResourceModel());
+            ActionLogger.AddedEmptyResource();
+        }
 
         #endregion
 
@@ -86,7 +91,11 @@ namespace SLS.MVVM.ViewModel
 
         private bool CanRemoveResourceCommandExecute(object p) => _SelectedResource != null;
 
-        private void OnRemoveResourceCommandExecuted(object p) => Resources.Remove(SelectedResource);
+        private void OnRemoveResourceCommandExecuted(object p) 
+        {
+            Resources.Remove(SelectedResource);
+            ActionLogger.RemovedResource(SelectedResource.Name);
+        }
 
         #endregion
 
@@ -150,6 +159,8 @@ namespace SLS.MVVM.ViewModel
             SetSearchingFilters(Resources);
         }
 
+        #region Searching filter
+
         private void SetSearchingFilters(ObservableCollection<ResourceModel> Collection)
         {
             _selectedResourceCollection.Source = Collection;
@@ -179,6 +190,8 @@ namespace SLS.MVVM.ViewModel
             if (resource.Password.Contains(text, StringComparison.OrdinalIgnoreCase)) return;
 
             e.Accepted = false;
-        } 
+        }
+
+        #endregion
     }
 }
