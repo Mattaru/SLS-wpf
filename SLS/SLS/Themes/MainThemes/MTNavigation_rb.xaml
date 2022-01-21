@@ -38,12 +38,31 @@
                                             RecognizesAccessKey="True"
                                             SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                                             VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                            
+
+                            <Border Grid.Column="0"
+                                    x:Name="IsChecedBorder"
+                                    HorizontalAlignment="Left" VerticalAlignment="Stretch"
+                                    BorderBrush="{StaticResource SecondaryBrush}"
+                                    Height="50"
+                                    BorderThickness="0,0,8,0"
+                                    CornerRadius="0,4,4,0"
+                                    Width="8"
+                                    Visibility="Hidden"/>
+
                         </Grid>
 
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsChecked" Value="True">
                                 <Setter Property="Foreground" TargetName="HomeImageIcon" Value="#CFCFCF"/>
+                                <Setter Property="Visibility" TargetName="IsChecedBorder" Value="Visible"/>
+                                <Setter Property="Effect" TargetName="HomeImageIcon">
+                                    <Setter.Value>
+                                        <DropShadowEffect BlurRadius="15"
+                                                          Direction="-90"
+                                                          RenderingBias="Quality"
+                                                          ShadowDepth="2"/>
+                                    </Setter.Value>
+                                </Setter>
                             </Trigger>
                         </ControlTemplate.Triggers>
                         
@@ -116,11 +135,30 @@
                                             SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
                                             VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
 
+                            <Border Grid.Column="0"
+                                    x:Name="IsChecedBorder"
+                                    HorizontalAlignment="Left" VerticalAlignment="Stretch"
+                                    BorderBrush="{StaticResource SecondaryBrush}"
+                                    Height="50"
+                                    BorderThickness="0,0,8,0"
+                                    CornerRadius="0,4,4,0"
+                                    Width="8"
+                                    Visibility="Hidden"/>
+
                         </Grid>
 
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsChecked" Value="True">
                                 <Setter Property="Foreground" TargetName="ListImageIcon" Value="#CFCFCF"/>
+                                <Setter Property="Visibility" TargetName="IsChecedBorder" Value="Visible"/>
+                                <Setter Property="Effect" TargetName="ListImageIcon">
+                                    <Setter.Value>
+                                        <DropShadowEffect BlurRadius="15"
+                                                          Direction="-90"
+                                                          RenderingBias="Quality"
+                                                          ShadowDepth="2"/>
+                                    </Setter.Value>
+                                </Setter>
                             </Trigger>
                         </ControlTemplate.Triggers>
 
