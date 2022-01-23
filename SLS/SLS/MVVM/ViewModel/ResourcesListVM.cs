@@ -107,11 +107,10 @@ namespace SLS.MVVM.ViewModel
 
         private void OnDataGridChangeVisibilityCommandExecuted(object p) 
         {
-            _listBoxVisibility = "Collapsed";
-            _dataGridVisibility = "Visible";
+            ListBoxVisibility = "Collapsed";
+            DataGridVisibility = "Visible";
             OnPropertyChnged(nameof(DataGridVisibility));
             OnPropertyChnged(nameof(ListBoxVisibility));
-            
         }
 
         #endregion
@@ -124,9 +123,8 @@ namespace SLS.MVVM.ViewModel
 
         private void OnListBoxChangeVisibilityCommandExecuted(object p) 
         {
-            
-            _dataGridVisibility = "Collapsed";
-            _listBoxVisibility = "Visible";
+            DataGridVisibility = "Collapsed";
+            ListBoxVisibility = "Visible";
             OnPropertyChnged(nameof(ListBoxVisibility));
             OnPropertyChnged(nameof(DataGridVisibility));
            
