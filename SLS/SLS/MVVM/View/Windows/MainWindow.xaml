@@ -144,7 +144,7 @@
                                              Command="{Binding SelectResourceListViewCommand}"/>
 
                 <components:NavigationButton Text="Statistic"
-                                             Icon="Solid_ChartBar"
+                                             Icon="Regular_ChartBar"
                                              Command=""/>
 
             </StackPanel>
