@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" mc:Ignorable="d" 
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:components="clr-namespace:SLS.Components"
              xmlns:local="clr-namespace:SLS.MVVM.View"
              d:DesignHeight="620" d:DesignWidth="950"
              DataContext="{Binding ResourcesListViewModel, Source={StaticResource VMLocator}}">
@@ -34,12 +35,12 @@
                         HorizontalAlignment="Left"
                         VerticalAlignment="Center">
 
-                <RadioButton Style="{StaticResource MTSwitchList_rb}"
-                             Command="{Binding ListBoxChangeVisibilityCommand}"
-                             IsChecked="True"/>
+                <components:RLSwitchButton IsChecked="True"
+                                           Icon="Solid_ThList"
+                                           Command="{Binding ListBoxChangeVisibilityCommand}"/>
 
-                <RadioButton Style="{StaticResource MTSwitchGrid_rb}"
-                             Command="{Binding DataGridChangeVisibilityCommand}"/>
+                <components:RLSwitchButton Icon="Solid_List"
+                                           Command="{Binding DataGridChangeVisibilityCommand}"/>
 
             </StackPanel>
             
