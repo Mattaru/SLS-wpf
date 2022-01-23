@@ -64,9 +64,8 @@
             </StackPanel>
             
             <Rectangle Grid.Column="1"
-                       Fill="{StaticResource SecondaryBrush}"
                        VerticalAlignment="Bottom"
-                       Stroke="{StaticResource SecondaryBrush}"
+                       Stroke="{StaticResource SupportingBrush}"
                        Height="1"/>
 
         </Grid>

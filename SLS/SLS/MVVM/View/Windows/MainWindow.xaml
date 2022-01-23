@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:fa="http://schemas.fontawesome.com/icons/"
+        xmlns:components="clr-namespace:SLS.Components"
         xmlns:local="clr-namespace:SLS"
         Height="650" Width="1200"
         MinHeight="650" MinWidth="1200"
@@ -133,14 +134,18 @@
             <StackPanel Orientation="Vertical"
                         Margin="0,0">
 
-                <RadioButton Tag="Home"
-                             IsChecked="True"
-                             Style="{StaticResource MTNavigation_rb_Home}"
-                             Command="{Binding SelectHomeViewCommand}"/>
+                <components:NavigationButton IsChecked="True"
+                                             Text="Home"
+                                             Icon="Solid_Home"
+                                             Command="{Binding SelectHomeViewCommand}"/>
 
-                <RadioButton Tag="Password"
-                             Style="{StaticResource MTNavigation_rb_List}"
-                             Command="{Binding SelectResourceListViewCommand}"/>
+                <components:NavigationButton Text="Passwords"
+                                             Icon="Solid_list"
+                                             Command="{Binding SelectResourceListViewCommand}"/>
+
+                <components:NavigationButton Text="Statistic"
+                                             Icon="Solid_ChartBar"
+                                             Command=""/>
 
             </StackPanel>
             
