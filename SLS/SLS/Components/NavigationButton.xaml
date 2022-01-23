@@ -12,7 +12,7 @@
                      Tag="{Binding Text, RelativeSource={RelativeSource AncestorType=local:NavigationButton}}"
                      IsChecked="{Binding IsChecked, RelativeSource={RelativeSource AncestorType=local:NavigationButton}}"
                      Command="{Binding Command, RelativeSource={RelativeSource AncestorType=local:NavigationButton}}"
-                     Style="{StaticResource BTN}"/>
+                     Style="{StaticResource MTNavigation_rb}"/>
     </Grid>
     
 </UserControl>
