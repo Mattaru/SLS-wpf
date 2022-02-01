@@ -1,8 +1,9 @@
-﻿using SLS.Services.Logger;
+﻿using SLS.Services.Interfaces;
+using SLS.Services.Logger;
 
 namespace SLS.Services
 {
-    internal static class ActionLogger
+    internal class ActionLogger : ILogger
     {
         private const string ADD_ACTION = "ADDED";
 
@@ -18,12 +19,12 @@ namespace SLS.Services
 
         private const string CHANGED_RESOURCE_MSG = "Resource has been changed.";
 
-        public static LoggModel AddedResource(string senderName) => new LoggModel(senderName, ADD_ACTION, ADD_RESOURCE_MSG);
+        public LoggModel AddedResource(string senderName) => new LoggModel(senderName, ADD_ACTION, ADD_RESOURCE_MSG);
 
-        public static LoggModel AddedEmptyResource() => new LoggModel(ADD_ACTION, ADD_RESOURCE_MSG);
+        public LoggModel AddedEmptyResource() => new LoggModel(ADD_ACTION, ADD_RESOURCE_MSG);
 
-        public static LoggModel RemovedResource(string senderName) => new LoggModel(senderName, REMOVE_ACTION, REMOVE_RESOURCE_MSG);
+        public LoggModel RemovedResource(string senderName) => new LoggModel(senderName, REMOVE_ACTION, REMOVE_RESOURCE_MSG);
 
-        public static LoggModel ChangedResource(string senderName) => new LoggModel(senderName, CHANGED_ACTION, CHANGED_RESOURCE_MSG);
+        public LoggModel ChangedResource(string senderName) => new LoggModel(senderName, CHANGED_ACTION, CHANGED_RESOURCE_MSG);
     }
 }

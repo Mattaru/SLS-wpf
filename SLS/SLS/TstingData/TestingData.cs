@@ -1,5 +1,6 @@
 ﻿using SLS.MVVM.Model;
 using SLS.Services;
+using SLS.Services.Interfaces;
 using SLS.Services.Logger;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,8 @@ namespace SLS.TstingData
 {
     internal static class TestingData
     {
+        private static readonly ILogger Logger = new ActionLogger();
+
         private static string[] _resourceNames = new string[] 
         {
             "Mail.ru", "GirtHub", "WorldOfWorcraft", "Gmail.com", "Facebook", "Instagram", "Telegram", "Escape from Tarkov",
@@ -48,19 +51,19 @@ namespace SLS.TstingData
                 switch (index)
                 {
                     case 1:
-                        loggs.Add(ActionLogger.AddedResource(name));
+                        loggs.Add(Logger.AddedResource(name));
                         break;
 
                     case 2:
-                        loggs.Add(ActionLogger.AddedEmptyResource());
+                        loggs.Add(Logger.AddedEmptyResource());
                         break;
 
                     case 3:
-                        loggs.Add(ActionLogger.RemovedResource(name));
+                        loggs.Add(Logger.RemovedResource(name));
                         break;
 
                     case 4:
-                        loggs.Add(ActionLogger.ChangedResource(name));
+                        loggs.Add(Logger.ChangedResource(name));
                         break;
                 }
             }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SLS.MVVM.ViewModel;
+using SLS.Services;
 using System;
 using System.IO;
 using System.Runtime.CompilerServices;
@@ -39,7 +40,8 @@ namespace SLS
         }
 
         public static void ConfigureServices(HostBuilderContext host, IServiceCollection services) => services
-            .RegistrationViewModels();
+            .RegistrationViewModels()
+            .RegistrationServices();
 
         public static string? CurrentDirectory => IsDesignMode 
             ? Path.GetDirectoryName(GetSourceCodePath())

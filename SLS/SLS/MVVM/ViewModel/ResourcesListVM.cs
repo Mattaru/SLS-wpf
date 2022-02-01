@@ -2,6 +2,7 @@
 using SLS.Infrastucture.Commands;
 using SLS.MVVM.Model;
 using SLS.Services;
+using SLS.Services.Interfaces;
 using SLS.TstingData;
 using System;
 using System.Collections.ObjectModel;
@@ -13,9 +14,11 @@ namespace SLS.MVVM.ViewModel
 {
     internal class ResourcesListVM : ObservableObject
     {
+        // Propertys
+
         public MainVM? MainVM { get; internal set; }
 
-        // Propertys
+        public ILogger Logger { get; internal set; }
 
         public ObservableCollection<ResourceModel> Resources { get; }
 
@@ -80,7 +83,7 @@ namespace SLS.MVVM.ViewModel
         private void OnAddEmptyRecourceCommandExecuted(object p)
         {
             Resources.Add(new ResourceModel());
-            ActionLogger.AddedEmptyResource();
+            Logger.AddedEmptyResource();
         }
 
         #endregion
@@ -94,7 +97,7 @@ namespace SLS.MVVM.ViewModel
         private void OnRemoveResourceCommandExecuted(object p) 
         {
             Resources.Remove(SelectedResource);
-            ActionLogger.RemovedResource(SelectedResource.Name);
+            Logger.RemovedResource(SelectedResource.Name);
         }
 
         #endregion

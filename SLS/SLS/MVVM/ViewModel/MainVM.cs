@@ -2,6 +2,7 @@
 using SLS.Infrastucture.Commands;
 using SLS.MVVM.Model;
 using SLS.MVVM.View;
+using SLS.Services.Interfaces;
 using System.Windows;
 using System.Windows.Input;
 
@@ -117,12 +118,13 @@ namespace SLS.MVVM.ViewModel
 
         #endregion
 
-        public MainVM(HomeVM Home, ResourcesListVM ResourceList)
+        public MainVM(HomeVM Home, ResourcesListVM ResourceList, ILogger Logger)
         {
             #region View models
 
             Home.MainVM = this;
             ResourceList.MainVM = this;
+            ResourceList.Logger = Logger;
 
             #endregion
 
