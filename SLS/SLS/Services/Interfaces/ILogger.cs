@@ -9,12 +9,12 @@ namespace SLS.Services.Interfaces
 {
     internal interface ILogger
     {
-        public LoggModel AddedResource(string senderName);
+        LoggModel AddedResource(string senderName);
 
-        public  LoggModel AddedEmptyResource();
+        LoggModel AddedEmptyResource();
 
-        public LoggModel RemovedResource(string senderName);
+        LoggModel RemovedResource(string senderName);
 
-        public LoggModel ChangedResource(string senderName);
+        LoggModel ChangedResource(string senderName);
     }
 }
