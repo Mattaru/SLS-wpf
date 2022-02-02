@@ -29,8 +29,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <Border Grid.Row="0" Grid.ColumnSpan="2"
-                MouseDown="Border_MouseDown">
+        <Border Grid.Row="0" Grid.ColumnSpan="2">
             <Border.Background>
                 <LinearGradientBrush EndPoint="0.2,3" StartPoint="0.7,0">
                     <GradientStop Color="#FF76B3BB"
@@ -39,6 +38,9 @@
                                               Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
+            <i:Interaction.Behaviors>
+                <b:WindowToolbarBehavior/>
+            </i:Interaction.Behaviors>
 
             <Grid VerticalAlignment="Stretch">
 
