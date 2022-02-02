@@ -4,6 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:fa="http://schemas.fontawesome.com/icons/"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        xmlns:b="clr-namespace:SLS.Infrastucture.Behaviors"
         xmlns:components="clr-namespace:SLS.Components"
         xmlns:local="clr-namespace:SLS"
         Height="650" Width="1200"
@@ -51,8 +53,11 @@
                             Background="{StaticResource TrasparentBrush}"
                             Foreground="{StaticResource SupportingBrush}"
                             BorderThickness="0"
-                            FontWeight="ExtraBold"
-                            Command="{Binding MinimizeAppCommand}"/>
+                            FontWeight="ExtraBold">
+                        <i:Interaction.Behaviors>
+                            <b:MinimizeWindow/>
+                        </i:Interaction.Behaviors>
+                    </Button>
 
                     <Button Content="▢"
                             Height="25"
@@ -60,8 +65,11 @@
                             Background="{StaticResource TrasparentBrush}"
                             Foreground="{StaticResource SupportingBrush}"
                             BorderThickness="0"
-                            FontWeight="Bold"
-                            Command="{Binding MaximizeAppCommand}"/>
+                            FontWeight="Bold">
+                        <i:Interaction.Behaviors>
+                            <b:WindowStateChange/>
+                        </i:Interaction.Behaviors>
+                    </Button>
 
                     <Button Content="✕"
                             Height="25"
@@ -69,8 +77,11 @@
                             Background="{StaticResource TrasparentBrush}"
                             Foreground="{StaticResource SupportingBrush}"
                             BorderThickness="0"
-                            FontWeight="Bold"
-                            Command="{Binding CloseAppCommand}"/>
+                            FontWeight="Bold">
+                        <i:Interaction.Behaviors>
+                            <b:CloseWindow/>
+                        </i:Interaction.Behaviors>
+                    </Button>
 
                 </StackPanel>
 
