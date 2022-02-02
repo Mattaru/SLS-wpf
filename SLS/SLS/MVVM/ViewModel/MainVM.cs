@@ -44,42 +44,6 @@ namespace SLS.MVVM.ViewModel
 
         // Commands
 
-        #region CloseAppCommand
-
-        public ICommand CloseAppCommand { get; }
-
-        private bool CanCloseAppCommandExecute(object p) => true;
-
-        private void OnCloseAppCommandExecuted(object p) => Application.Current.Shutdown();
-
-        #endregion
-
-        #region MaximizeAppCommand
-
-        public ICommand MaximizeAppCommand { get; }
-
-        private bool CanMaximizeAppCommandExecute(object p) => true;
-
-        private void OnMaximizeAppCommandExecuted(object p) 
-        {
-            if(Application.Current.MainWindow.WindowState != WindowState.Maximized)
-                Application.Current.MainWindow.WindowState = WindowState.Maximized;
-            else
-                Application.Current.MainWindow.WindowState = WindowState.Normal;
-        }
-
-        #endregion
-
-        #region MinimizeAppCommand
-
-        public ICommand MinimizeAppCommand { get; }
-
-        private bool CanMinimizeAppCommandExecute(object p) => true;
-
-        private void OnMinimizeAppCommandExecuted(object p) => Application.Current.MainWindow.WindowState = WindowState.Minimized;
-
-        #endregion
-
         #region SelectHomeViewCommand
 
         public ICommand SelectHomeViewCommand { get; }
@@ -129,10 +93,6 @@ namespace SLS.MVVM.ViewModel
             #endregion
 
             #region Commands
-
-            CloseAppCommand = new LambdaCommand(OnCloseAppCommandExecuted, CanCloseAppCommandExecute);
-            MaximizeAppCommand = new LambdaCommand(OnMaximizeAppCommandExecuted, CanMaximizeAppCommandExecute);
-            MinimizeAppCommand = new LambdaCommand(OnMinimizeAppCommandExecuted, CanMinimizeAppCommandExecute);
 
             SelectHomeViewCommand = new LambdaCommand(OnSelectHomeViewCommandExecuted, CanSelectHomeViewCommandExecute);
             SelectResourceListViewCommand = new LambdaCommand(OnSelectResourceListViewCommandExecuted, CanSelectResourceListViewCommandExecute);
