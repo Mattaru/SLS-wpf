@@ -15,6 +15,14 @@
         ResizeMode="CanResizeWithGrip"
         Background="{StaticResource FirstPrimaryBrush}"
         DataContext="{Binding MainViewModel, Source={StaticResource VMLocator}}">
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="35"
+                      CornerRadius="4"
+                      GlassFrameThickness="0"
+                      NonClientFrameEdges="None"
+                      ResizeBorderThickness="5"
+                      UseAeroCaptionButtons="False" />
+    </WindowChrome.WindowChrome>
 
     <Grid>
         
@@ -55,7 +63,8 @@
                             Background="{StaticResource TrasparentBrush}"
                             Foreground="{StaticResource SupportingBrush}"
                             BorderThickness="0"
-                            FontWeight="ExtraBold">
+                            FontWeight="ExtraBold"
+                            WindowChrome.IsHitTestVisibleInChrome="True">
                         <i:Interaction.Behaviors>
                             <b:MinimizeWindow/>
                         </i:Interaction.Behaviors>
@@ -67,7 +76,8 @@
                             Background="{StaticResource TrasparentBrush}"
                             Foreground="{StaticResource SupportingBrush}"
                             BorderThickness="0"
-                            FontWeight="Bold">
+                            FontWeight="Bold"
+                            WindowChrome.IsHitTestVisibleInChrome="True">
                         <i:Interaction.Behaviors>
                             <b:WindowStateChange/>
                         </i:Interaction.Behaviors>
@@ -79,7 +89,8 @@
                             Background="{StaticResource TrasparentBrush}"
                             Foreground="{StaticResource SupportingBrush}"
                             BorderThickness="0"
-                            FontWeight="Bold">
+                            FontWeight="Bold"
+                            WindowChrome.IsHitTestVisibleInChrome="True">
                         <i:Interaction.Behaviors>
                             <b:CloseWindow/>
                         </i:Interaction.Behaviors>
