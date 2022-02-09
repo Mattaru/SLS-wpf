@@ -1,7 +1,6 @@
 ﻿using SLS.MVVM.Model;
 using SLS.Services;
 using SLS.Services.Interfaces;
-using SLS.Services.Logger;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +23,7 @@ namespace SLS.TstingData
             "GeForcePlay", "Acer", "Djinny", "Goha", "BattleOfTheNations", "YouTube", "TicToc"
         };
 
-        public static IEnumerable<ResourceModel> GetResourceList()
+        private static IEnumerable<ResourceModel> GetResourceList()
         {
             for (int i = 0; i < _resourceNames.Length; i++)
             {
@@ -39,7 +38,7 @@ namespace SLS.TstingData
             }
         }
 
-        public static IEnumerable<LoggModel> GetLoggList()
+        private static IEnumerable<LoggModel> GetLoggList()
         {
             var random = new Random();
 

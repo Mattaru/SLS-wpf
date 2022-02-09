@@ -1,7 +1,7 @@
 ﻿using SLS.MVVM.Model.Interfaces;
 using System;
 
-namespace SLS.Services.Logger
+namespace SLS.MVVM.Model
 {
     internal class LoggModel : IEntity
     {

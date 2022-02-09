@@ -1,5 +1,4 @@
-﻿using SLS.Services.Logger;
-using SLS.MVVM.Model;
+﻿using SLS.MVVM.Model;
 
 namespace SLS.Services.Interfaces
 {

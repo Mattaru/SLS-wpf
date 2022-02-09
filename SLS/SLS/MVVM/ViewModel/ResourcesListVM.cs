@@ -130,7 +130,6 @@ namespace SLS.MVVM.ViewModel
             ListBoxVisibility = "Visible";
             OnPropertyChnged(nameof(ListBoxVisibility));
             OnPropertyChnged(nameof(DataGridVisibility));
-           
         }
 
         #endregion
@@ -153,7 +152,7 @@ namespace SLS.MVVM.ViewModel
 
             #endregion
 
-            var resources = TestingData.GetResourceList();
+            var resources = TestingData.Resources;
             Resources = new ObservableCollection<ResourceModel>(resources);
 
             // Filter for 'Search'
