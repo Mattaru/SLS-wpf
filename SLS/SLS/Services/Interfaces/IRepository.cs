@@ -14,6 +14,6 @@ namespace SLS.Services.Interfaces
 
         ObservableCollection<T> GetAll();
 
-        T Get(int id) => GetAll().FirstOrDefault(item => item.ID == id);
+        T Get(int id) => GetAll().FirstOrDefault(item => item.Id == id);
     }
 }

@@ -45,6 +45,6 @@ namespace SLS.Core
             Update(item, db_item);
         }
 
-        protected abstract bool Update(T Source, T Destination);
+        protected abstract void Update(T Source, T Destination);
     }
 }

@@ -8,9 +8,9 @@ namespace SLS.Services.Repositorys
     {
         public LoggsRepository() : base(TestingData.Loggs) { }
 
-        protected override bool Update(LoggModel Source, LoggModel Destination)
+        protected override void Update(LoggModel Source, LoggModel Destination)
         {
-            return false;
+            throw new System.NotImplementedException("Method not implimented.");
         }
     }
 }

@@ -5,7 +5,7 @@ namespace SLS.MVVM.Model
 {
     internal class ResourceModel : IEntity
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         public string Name { get; set; } = "Unknown";
 
