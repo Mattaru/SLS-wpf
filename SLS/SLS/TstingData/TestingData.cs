@@ -10,6 +10,8 @@ namespace SLS.TstingData
 {
     internal static class TestingData
     {
+        public static IEnumerable<ResourceModel> Resources => GetResourceList();
+
         private static readonly ILogger Logger = new ActionLogger();
 
         private static string[] _resourceNames = new string[] 
@@ -20,10 +22,8 @@ namespace SLS.TstingData
             "GeForcePlay", "Acer", "Djinny", "Goha", "BattleOfTheNations", "YouTube", "TicToc"
         };
 
-        public static List<ResourceModel> GetResourceList()
+        public static IEnumerable<ResourceModel> GetResourceList()
         {
-            List<ResourceModel> resources = new List<ResourceModel>();
-
             for (int i = 0; i < _resourceNames.Length; i++)
             {
                 var resource = new ResourceModel()
@@ -33,10 +33,8 @@ namespace SLS.TstingData
                     Password = Guid.NewGuid().ToString(),
                 };
 
-                resources.Add(resource);
+                yield return resource;
             }
-
-            return resources;
         }
 
         public static List<LoggModel> GetLoggList()

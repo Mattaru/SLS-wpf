@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SLS.MVVM.Model.Interfaces;
+using System;
 
 namespace SLS.Services.Logger
 {
-    internal class LoggModel
+    internal class LoggModel : IEntity
     {
+        public int ID { get; set; }
+
         public string ObjectSenderName { get; } = "Unknown";
 
         public string Action { get; }
@@ -15,7 +14,7 @@ namespace SLS.Services.Logger
         public string Message { get; }
 
         public DateTime Date { get; }
-
+        
         public LoggModel(string action, string messsage) 
         {
             Action = action;

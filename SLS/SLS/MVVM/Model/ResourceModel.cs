@@ -1,28 +1,21 @@
-﻿using SLS.Core;
+﻿using SLS.MVVM.Model.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SLS.MVVM.Model
 {
-    internal class ResourceModel : ObservableObject
+    internal class ResourceModel : IEntity
     {
-        private string _name = "Unknown";
-        public string Name { get => _name; set => Set<string>(ref _name, value); }
+        public int ID { get; set; }
 
+        public string Name { get; set; } = "Unknown";
 
-        private string _login = "Unknown";
-        public string Login { get => _login; set => Set<string>(ref _login, value); }
+        public string Login { get; set; } = "Unknown";
 
-
-        private string _password = "Unknown";
-        public string Password { get => _password; set => Set<string>(ref _password, value); }
-
+        public string Password { get; set; } = "Unknown";
 
         public DateTime CreationDate { get; } = DateTime.Now;
 
         public DateTime LastModificationDate { get; private set; } = DateTime.Now;
+        
     }
 }
