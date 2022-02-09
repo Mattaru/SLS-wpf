@@ -12,6 +12,8 @@ namespace SLS.TstingData
     {
         public static IEnumerable<ResourceModel> Resources => GetResourceList();
 
+        public static IEnumerable<LoggModel> Loggs => GetLoggList();
+
         private static readonly ILogger Logger = new ActionLogger();
 
         private static string[] _resourceNames = new string[] 
@@ -37,10 +39,9 @@ namespace SLS.TstingData
             }
         }
 
-        public static List<LoggModel> GetLoggList()
+        public static IEnumerable<LoggModel> GetLoggList()
         {
             var random = new Random();
-            List<LoggModel> loggs = new List<LoggModel>();
 
             foreach(var name in _resourceNames)
             {
@@ -49,24 +50,22 @@ namespace SLS.TstingData
                 switch (index)
                 {
                     case 1:
-                        loggs.Add(Logger.AddedResource(name));
+                        yield return Logger.AddedResource(name);
                         break;
 
                     case 2:
-                        loggs.Add(Logger.AddedEmptyResource());
+                        yield return Logger.AddedEmptyResource();
                         break;
 
                     case 3:
-                        loggs.Add(Logger.RemovedResource(name));
+                        yield return Logger.RemovedResource(name);
                         break;
 
                     case 4:
-                        loggs.Add(Logger.ChangedResource(name));
+                        yield return Logger.ChangedResource(name);
                         break;
                 }
             }
-
-            return loggs;
         }
     }
 }
