@@ -77,12 +77,11 @@ namespace SLS.MVVM.ViewModel
 
         public ICommand AddEmptyRecourceCommand { get; }
 
-        private bool CanAddEmptyRecourceCommandExecute(object p) => Resources != null;
+        private bool CanAddEmptyRecourceCommandExecute(object p) => true;
 
         private void OnAddEmptyRecourceCommandExecuted(object p)
         {
-            Resources.Add(new ResourceModel());
-            Logger.AddedEmptyResource();
+            
         }
 
         #endregion
@@ -91,12 +90,12 @@ namespace SLS.MVVM.ViewModel
 
         public ICommand RemoveResourceCommand { get; }
 
-        private bool CanRemoveResourceCommandExecute(object p) => _SelectedResource != null;
+        private bool CanRemoveResourceCommandExecute(object p) => p is ResourceModel;
 
         private void OnRemoveResourceCommandExecuted(object p) 
         {
-            Resources.Remove(SelectedResource);
-            Logger.RemovedResource(SelectedResource.Name);
+            _ResourceManager.Delete((ResourceModel)p);
+            OnPropertyChnged(nameof(SelectedResourceCollection));
         }
 
         #endregion

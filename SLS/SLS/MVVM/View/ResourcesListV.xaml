@@ -73,19 +73,24 @@
 
         <ListBox Grid.Row="1"
                  ItemsSource="{Binding SelectedResourceCollection}"
+                 SelectedItem="{Binding SelectedResource}"
+                 SelectedIndex="0"
                  Visibility="{Binding ListBoxVisibility}"
                  Background="{StaticResource TrasparentBrush}"
                  Margin="10,10,4,0"
                  BorderThickness="0"
                  HorizontalContentAlignment="Stretch"
-                 ScrollViewer.VerticalScrollBarVisibility="Disabled"
+                 ScrollViewer.VerticalScrollBarVisibility="Hidden"
                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+                 ScrollViewer.CanContentScroll="False"
                  ItemContainerStyle="{StaticResource RLTListBoxItem}"/>
 
         <DataGrid Grid.Row="1" Grid.Column="0"
                   Visibility="{Binding DataGridVisibility, UpdateSourceTrigger=PropertyChanged}"
                   Margin="10"
                   ItemsSource="{Binding SelectedResourceCollection}"
+                  SelectedItem="{Binding SelectedResource}"
+                  SelectedIndex="0"
                   Background="{StaticResource FirstPrimaryBrush}"
                   VerticalGridLinesBrush="{StaticResource TrasparentBrush}"
                   HorizontalGridLinesBrush="{StaticResource TrasparentBrush}"
@@ -99,8 +104,7 @@
                   RowStyle="{StaticResource RLTRow_dg}"
                   CellStyle="{StaticResource RLTCell_dg}"
                   RowHeaderStyle="{StaticResource RLTRowHeader_dg}"
-                  HorizontalScrollBarVisibility="Disabled"
-                  SelectedItem="{Binding SelectedResource}">
+                  HorizontalScrollBarVisibility="Disabled">
 
             <DataGrid.Columns>
 
@@ -156,7 +160,7 @@
                          FontSize="12"
                          Style="{StaticResource RLTSearch_tb}"/>
 
-                <Button Content="Add emty"
+                <Button Content="Add"
                         Width="80"
                         HorizontalAlignment="Left"
                         Margin="10,2"
@@ -168,7 +172,8 @@
                         HorizontalAlignment="Left"
                         Margin="10,2"
                         Style="{StaticResource RLTMenu_b}"
-                        Command="{Binding RemoveResourceCommand}"/>
+                        Command="{Binding RemoveResourceCommand}"
+                        CommandParameter="{Binding SelectedResource}"/>
                 
             </StackPanel>
 
