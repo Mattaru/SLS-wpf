@@ -1,9 +1,8 @@
 ﻿using SLS.Core;
 using SLS.Infrastucture.Commands;
 using SLS.MVVM.Model;
-using SLS.Services;
 using SLS.Services.Interfaces;
-using SLS.TstingData;
+using SLS.Services.Managers;
 using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -20,7 +19,7 @@ namespace SLS.MVVM.ViewModel
 
         public ILogger Logger { get; internal set; }
 
-        public ObservableCollection<ResourceModel> Resources { get; }
+        private ResourcesManager _ResourceManager;
 
         #region SelectedResource
 
@@ -134,8 +133,10 @@ namespace SLS.MVVM.ViewModel
 
         #endregion
 
-        public ResourcesListVM()
+        public ResourcesListVM(ResourcesManager ResourceManager)
         {
+            _ResourceManager = ResourceManager;
+
             #region Commands
 
             AddEmptyRecourceCommand = new LambdaCommand(OnAddEmptyRecourceCommandExecuted, CanAddEmptyRecourceCommandExecute);
@@ -152,14 +153,9 @@ namespace SLS.MVVM.ViewModel
 
             #endregion
 
-            var resources = TestingData.Resources;
-            Resources = new ObservableCollection<ResourceModel>(resources);
-
-            // Filter for 'Search'
-            SetSearchingFilters(Resources);
+            var resources = _ResourceManager.Resources;
+            SetSearchingFilters(resources);
         }
-
-        #region Searching filter
 
         private void SetSearchingFilters(ObservableCollection<ResourceModel> Collection)
         {
@@ -191,7 +187,5 @@ namespace SLS.MVVM.ViewModel
 
             e.Accepted = false;
         }
-
-        #endregion
     }
 }

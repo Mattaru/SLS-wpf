@@ -87,6 +87,7 @@ namespace SLS.MVVM.ViewModel
             #region View models
 
             Home.MainVM = this;
+
             ResourceList.MainVM = this;
             ResourceList.Logger = Logger;
 

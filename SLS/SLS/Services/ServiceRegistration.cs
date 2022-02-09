@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using SLS.Services.Interfaces;
+using SLS.Services.Managers;
 using SLS.Services.Repositorys;
 
 namespace SLS.Services
@@ -12,6 +13,8 @@ namespace SLS.Services
 
             services.AddSingleton<LoggsRepository>();
             services.AddSingleton<ResourcesRepository>();
+
+            services.AddSingleton<ResourcesManager>();
 
             return services;
         }
