@@ -17,7 +17,7 @@ namespace SLS.MVVM.ViewModel
 
         public MainVM? MainVM { get; internal set; }
 
-        public ILogger Logger { get; internal set; }
+        public ILogger? Logger { get; internal set; }
 
         private ResourcesManager _ResourceManager;
 
@@ -25,7 +25,15 @@ namespace SLS.MVVM.ViewModel
 
         private ResourceModel? _SelectedResource;
 
-        public ResourceModel SelectedResource {  get => _SelectedResource; set => Set<ResourceModel>(ref _SelectedResource, value); }
+        public ResourceModel? SelectedResource 
+        {  
+            get => _SelectedResource;
+            set
+            { 
+                Set(ref _SelectedResource, value);
+                OnPropertyChnged(nameof(SelectedResource));
+            } 
+        }
 
         #endregion
 
@@ -95,7 +103,6 @@ namespace SLS.MVVM.ViewModel
         private void OnRemoveResourceCommandExecuted(object p) 
         {
             _ResourceManager.Delete((ResourceModel)p);
-            OnPropertyChnged(nameof(SelectedResourceCollection));
         }
 
         #endregion
@@ -152,18 +159,17 @@ namespace SLS.MVVM.ViewModel
 
             #endregion
 
-            var resources = _ResourceManager.Resources;
-            SetSearchingFilters(resources);
+            SetCollectionView(_ResourceManager.Resources);
         }
 
-        private void SetSearchingFilters(ObservableCollection<ResourceModel> Collection)
+        private void SetCollectionView(ObservableCollection<ResourceModel> Collection)
         {
             _selectedResourceCollection.Source = Collection;
             OnPropertyChnged(nameof(SelectedResourceCollection));
-            _selectedResourceCollection.Filter += ResourceCollectionSearchFilter;
+            _selectedResourceCollection.Filter += SetFilters;
         }
 
-        private void ResourceCollectionSearchFilter(object sender, FilterEventArgs e)
+        private void SetFilters(object sender, FilterEventArgs e)
         {
             if (!(e.Item is ResourceModel resource))
             {
