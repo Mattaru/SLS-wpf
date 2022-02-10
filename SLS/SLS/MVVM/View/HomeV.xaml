@@ -33,14 +33,6 @@
                            Foreground="{StaticResource SupportingBrush}"
                            FontSize="16"/>
 
-                    <Button HorizontalAlignment="Right"
-                            VerticalAlignment="Top"
-                            Content="Statistic"
-                            Height="45"
-                            Width="100"
-                            Margin="20"
-                            Style="{StaticResource HTStatistic_b}"/>
-
                 </Grid>
                 
             </Border>
