@@ -5,6 +5,8 @@ using SLS.Services.Managers;
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace SLS.MVVM.ViewModel
@@ -22,9 +24,11 @@ namespace SLS.MVVM.ViewModel
 
         #region ResourceFormTitle
 
-        private string? _resourceFormTitle = "Just default Title";
+        private const string DEFAULT_FORM_TEXT = "Just default Title";
 
-        public string ResourceFormTitle { get => _resourceFormTitle; set => Set<string>(ref _resourceFormTitle, value); }
+        private string? _resourceFormTitle = DEFAULT_FORM_TEXT;
+
+        public string ResourceFormTitle { get => _resourceFormTitle; set => Set(ref _resourceFormTitle, value); }
 
         #endregion
 
@@ -66,6 +70,17 @@ namespace SLS.MVVM.ViewModel
 
             var resource = new ResourceModel(Name, Login, Password);
             _ResourceManager.Add(resource);
+
+            
+
+            Task.Run(() => 
+            {
+                ResourceFormTitle = "Resource successfuly added.";
+
+                Thread.Sleep(5000);
+
+                ResourceFormTitle = DEFAULT_FORM_TEXT;
+            });
 
             Name = string.Empty;
             Login = string.Empty;

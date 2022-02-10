@@ -16,7 +16,7 @@
         Background="{StaticResource FirstPrimaryBrush}"
         DataContext="{Binding MainViewModel, Source={StaticResource VMLocator}}">
     <WindowChrome.WindowChrome>
-        <WindowChrome CaptionHeight="35"
+        <WindowChrome CaptionHeight="30"
                       CornerRadius="4"
                       GlassFrameThickness="0"
                       NonClientFrameEdges="None"

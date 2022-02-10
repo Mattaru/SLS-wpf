@@ -3,7 +3,7 @@
 
     <Style TargetType="{x:Type TextBox}" x:Key="HTForm_tb">
 
-        <Setter Property="Height" Value="40"/>
+        <Setter Property="Height" Value="50"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBox}">
@@ -27,11 +27,13 @@
                                    IsHitTestVisible="False"
                                    Visibility="Collapsed"/>
 
-                            <Rectangle Fill="{StaticResource SecondPrimaryBrush}"
-                                       x:Name="ButtomTextBoxRectangle"
-                                       Height="2"
-                                       VerticalAlignment="Bottom"
-                                       Visibility="Collapsed"/>
+                            <Border BorderBrush="{StaticResource SecondPrimaryBrush}"
+                                    BorderThickness="0,0,0,4"
+                                    Height="4"
+                                    CornerRadius="0,0,4,4"
+                                    x:Name="ButtomTextBoxRectangle"
+                                    VerticalAlignment="Bottom"
+                                    Visibility="Collapsed"/>
                         </Grid>
                     </Border>
 
