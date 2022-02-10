@@ -3,6 +3,7 @@ using SLS.Infrastucture.Commands;
 using SLS.MVVM.Model;
 using SLS.MVVM.View;
 using SLS.Services.Interfaces;
+using SLS.Services.Managers;
 using System.Windows;
 using System.Windows.Input;
 

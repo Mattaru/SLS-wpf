@@ -1,8 +1,6 @@
 ﻿using SLS.MVVM.Model;
 using SLS.Services.Repositorys;
-using System;
 using System.Collections.ObjectModel;
-using System.Linq;
 
 namespace SLS.Services.Managers
 {
@@ -14,7 +12,7 @@ namespace SLS.Services.Managers
 
         public ResourcesManager(ResourcesRepository ResourcesRepository) => _Resources = ResourcesRepository;
 
-        public bool Create(ResourceModel Resource) 
+        public bool Add(ResourceModel Resource) 
         { 
             if (Resource is null) return false;
 

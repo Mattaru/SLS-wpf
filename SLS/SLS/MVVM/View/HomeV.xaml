@@ -111,7 +111,8 @@
                         Height="30"
                         Width="60"
                         HorizontalAlignment="Right"
-                        Style="{StaticResource HTForm_b}"/>
+                        Style="{StaticResource HTForm_b}"
+                        Command="{Binding AddResourceCommand}"/>
 
             </StackPanel>
             

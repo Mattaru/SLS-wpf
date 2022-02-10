@@ -14,7 +14,6 @@
                 
                 <ResourceDictionary Source="./Themes/MainThemes/MTNavigation_rb.xaml"/>
                 
-                <ResourceDictionary Source="./Themes/HomeThemes/HTStatistic_b.xaml"/>
                 <ResourceDictionary Source="./Themes/HomeThemes/HTForm_tb.xaml"/>
                 <ResourceDictionary Source="./Themes/HomeThemes/HTForm_b.xaml"/>
                 

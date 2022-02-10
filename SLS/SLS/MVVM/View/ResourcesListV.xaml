@@ -79,7 +79,7 @@
                  Margin="10,10,4,0"
                  BorderThickness="0"
                  HorizontalContentAlignment="Stretch"
-                 ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                 ScrollViewer.VerticalScrollBarVisibility="Visible"
                  ScrollViewer.HorizontalScrollBarVisibility="Disabled"
                  ScrollViewer.CanContentScroll="False"
                  ItemContainerStyle="{StaticResource RLTListBoxItem}"/>

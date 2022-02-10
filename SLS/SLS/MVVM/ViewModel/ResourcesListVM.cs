@@ -159,7 +159,7 @@ namespace SLS.MVVM.ViewModel
 
             #endregion
 
-            SetCollectionView(_ResourceManager.Resources);
+            SetCollectionView(this._ResourceManager.Resources);
         }
 
         private void SetCollectionView(ObservableCollection<ResourceModel> Collection)

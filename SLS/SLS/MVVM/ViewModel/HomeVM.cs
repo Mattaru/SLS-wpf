@@ -1,7 +1,11 @@
 ﻿using SLS.Core;
+using SLS.Infrastucture.Commands;
+using SLS.MVVM.Model;
+using SLS.Services.Managers;
 using System;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Windows.Input;
 
 namespace SLS.MVVM.ViewModel
 {
@@ -11,7 +15,10 @@ namespace SLS.MVVM.ViewModel
 
         //Propertys
 
+        private ResourcesManager _ResourceManager;
+
         public ObservableCollection<String> HomePageLoggCollection { get; }
+
 
         #region ResourceFormTitle
 
@@ -45,8 +52,42 @@ namespace SLS.MVVM.ViewModel
 
         #endregion
 
-        public HomeVM()
+        // Commands
+
+        #region AddResourceCommand
+
+        public ICommand? AddResourceCommand { get; }
+
+        private bool CanAddResourceCommandExecute(object p) => !(_ResourceManager is null);
+
+        private void OnAddResourceCommandExecuted(object p)
         {
+            if (Name is null || Login is null || Password is null) return;
+
+            var resource = new ResourceModel(Name, Login, Password);
+            _ResourceManager.Add(resource);
+
+            Name = string.Empty;
+            Login = string.Empty;
+            Password = string.Empty;
+
+            OnPropertyChnged(nameof(Name));
+            OnPropertyChnged(nameof(Login));
+            OnPropertyChnged(nameof(Password));
+        }
+
+        #endregion
+
+        public HomeVM(ResourcesManager ResourceManager)
+        {
+            _ResourceManager = ResourceManager;
+
+            #region Commands
+
+            AddResourceCommand = new LambdaCommand(OnAddResourceCommandExecuted, CanAddResourceCommandExecute);
+
+            #endregion
+
             var logs = Enumerable.Range(1, 100).Select(i => $"{DateTime.Now} | Event{i} | simple log string");
             HomePageLoggCollection = new ObservableCollection<String>(logs);
         }

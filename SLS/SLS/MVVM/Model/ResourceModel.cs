@@ -16,6 +16,15 @@ namespace SLS.MVVM.Model
         public DateTime CreationDate { get; } = DateTime.Now;
 
         public DateTime LastModificationDate { get; private set; } = DateTime.Now;
-        
+
+        public ResourceModel() { }
+
+        public ResourceModel(string name, string login, string password)
+        {
+            Name = name;
+            Login = login;
+            Password = password;
+        }
+
     }
 }
