@@ -24,7 +24,7 @@ namespace SLS.MVVM.ViewModel
 
         #region ResourceFormTitle
 
-        private const string DEFAULT_FORM_TEXT = "Just default Title";
+        public const string DEFAULT_FORM_TEXT = "Just default Title";
 
         private string? _resourceFormTitle = DEFAULT_FORM_TEXT;
 

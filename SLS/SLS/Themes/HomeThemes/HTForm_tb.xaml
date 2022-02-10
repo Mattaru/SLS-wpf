@@ -2,7 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <Style TargetType="{x:Type TextBox}" x:Key="HTForm_tb">
-
+        <Setter Property="Opacity" Value="0.8"/>
         <Setter Property="Height" Value="50"/>
         <Setter Property="Template">
             <Setter.Value>

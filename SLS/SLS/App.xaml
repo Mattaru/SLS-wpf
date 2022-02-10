@@ -11,11 +11,12 @@
 
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="./Themes/Basic/Brushes.xaml"/>
-                
+
+                <ResourceDictionary Source="./Themes/Common/ActionButtonTheme.xaml"/>
+
                 <ResourceDictionary Source="./Themes/MainThemes/MTNavigation_rb.xaml"/>
                 
                 <ResourceDictionary Source="./Themes/HomeThemes/HTForm_tb.xaml"/>
-                <ResourceDictionary Source="./Themes/HomeThemes/HTForm_b.xaml"/>
                 
                 <ResourceDictionary Source="./Themes/ResourceListThemes/RLTDataGrid/RLTCell_dg.xaml"/>
                 <ResourceDictionary Source="./Themes/ResourceListThemes/RLTDataGrid/RLTHeader_dg.xaml"/>

@@ -1,7 +1,9 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
-    <Style TargetType="{x:Type Button}" x:Key="HTForm_b">
+    <Style TargetType="{x:Type Button}" x:Key="ActionButtonTheme">
+        <Setter Property="Opacity" Value="0.6"/>
+        <Setter Property="FontWeight" Value="Bold"/>
         <Setter Property="Foreground" Value="{StaticResource SecondaryBrush}"/>
         <Setter Property="Template">
             <Setter.Value>
@@ -10,15 +12,8 @@
                     <Border CornerRadius="4"
                             x:Name="Border"
                             Height="{TemplateBinding Height}"
-                            Width="{TemplateBinding Width}">
-                        <Border.Background>
-                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                                <GradientStop Color="#CFCFCF"
-                                              Offset="0"/>
-                                <GradientStop Color="#FF76B3BB"
-                                              Offset="1"/>
-                            </LinearGradientBrush>
-                        </Border.Background>
+                            Width="{TemplateBinding Width}"
+                            Background="{StaticResource SupportingBrush}">
 
                         <ContentPresenter Margin="2"
                             HorizontalAlignment="Center"
@@ -33,7 +28,7 @@
                                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                         <GradientStop Color="#353340"
                                                       Offset="0"/>
-                                        <GradientStop Color="#CFCFCF"
+                                        <GradientStop Color="#FF76B3BB"
                                                       Offset="1"/>
                                     </LinearGradientBrush>
                                 </Setter.Value>
@@ -45,6 +40,13 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
+
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="{StaticResource FirstPrimaryBrush}"/>
+            </Trigger>
+        </Style.Triggers>
+        
     </Style>
 
 </ResourceDictionary>

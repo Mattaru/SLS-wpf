@@ -10,8 +10,8 @@
     <Grid>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition Width="350"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="1*" MinWidth="350"/>
         </Grid.ColumnDefinitions>
         
         <Grid Grid.Column="0"
@@ -84,10 +84,22 @@
                         VerticalAlignment="Top">
 
                 <Label Content="{Binding ResourceFormTitle, UpdateSourceTrigger=PropertyChanged}"
+                       Padding="0,6"
                        HorizontalContentAlignment="Left"
                        VerticalContentAlignment="Bottom"
                        Foreground="{StaticResource FirstPrimaryBrush}"
-                       FontSize="16"/>
+                       FontSize="16"
+                       FontWeight="Bold">
+                    <Label.Style>
+                        <Style TargetType="{x:Type Label}">
+                            <Style.Triggers>
+                                <Trigger Property="Content" Value="Just default Title">
+                                    <Setter Property="Foreground" Value="{StaticResource FirstPrimaryBrush}"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Label.Style>
+                </Label>
 
                 <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}"
                          Tag="Name"
@@ -108,10 +120,11 @@
                          Style="{StaticResource HTForm_tb}"/>
 
                 <Button Content="Add"
-                        Height="30"
-                        Width="60"
+                        Height="40"
+                        Width="80"
+                        Margin="0,6,0,0"
                         HorizontalAlignment="Right"
-                        Style="{StaticResource HTForm_b}"
+                        Style="{StaticResource ActionButtonTheme}"
                         Command="{Binding AddResourceCommand}"/>
 
             </StackPanel>
