@@ -1,10 +1,7 @@
 ﻿using SLS.Core;
 using SLS.Infrastucture.Commands;
-using SLS.MVVM.Model;
 using SLS.MVVM.View;
 using SLS.Services.Interfaces;
-using SLS.Services.Managers;
-using System.Windows;
 using System.Windows.Input;
 
 namespace SLS.MVVM.ViewModel
@@ -88,6 +85,7 @@ namespace SLS.MVVM.ViewModel
             #region View models
 
             Home.MainVM = this;
+            Home.Logger = Logger;
 
             ResourceList.MainVM = this;
             ResourceList.Logger = Logger;

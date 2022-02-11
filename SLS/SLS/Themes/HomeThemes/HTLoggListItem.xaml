@@ -31,16 +31,21 @@
                             
                             <Label Content="{Binding Date}"
                                    FontWeight="Bold"
-                                   Padding="20,0,0,0"/>
+                                   Padding="20,6,6,6"/>
+                            
                             <Label Content="|"
                                    FontWeight="Bold"/>
+                            
                             <Label Content="{Binding Action}"
                                    x:Name="ActionLable"
-                                   Width="70"
+                                   Width="65"
                                    HorizontalContentAlignment="Center"/>
+                            
                             <Label Content="|"
                                    FontWeight="Bold"/>
+                            
                             <Label Content="{Binding Message}"/>
+                            
                             <Label Content="{Binding ObjectSenderName}"
                                    FontWeight="Bold"/>
 

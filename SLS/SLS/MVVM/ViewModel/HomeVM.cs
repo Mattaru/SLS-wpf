@@ -1,6 +1,7 @@
 ﻿using SLS.Core;
 using SLS.Infrastucture.Commands;
 using SLS.MVVM.Model;
+using SLS.Services.Interfaces;
 using SLS.Services.Managers;
 using System;
 using System.Collections.ObjectModel;
@@ -13,13 +14,15 @@ namespace SLS.MVVM.ViewModel
 {
     internal class HomeVM : ObservableObject
     {
-        public MainVM? MainVM { get; internal set; }
-
         //Propertys
 
         private ResourcesManager _ResourceManager;
 
         private LoggsManager _LoggsManager;
+
+        public MainVM? MainVM { get; internal set; }
+
+        public ILogger Logger { get; internal set; }
 
         public ObservableCollection<LoggModel> Loggs { get; }
 
@@ -70,7 +73,9 @@ namespace SLS.MVVM.ViewModel
             if (Name is null || Login is null || Password is null) return;
 
             var resource = new ResourceModel(Name, Login, Password);
+            var logg = Logger.AddedResource(Name);
             _ResourceManager.Add(resource);
+            _LoggsManager.Add(logg);
 
             Task.Run(() => 
             {

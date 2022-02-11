@@ -1,12 +1,12 @@
 ﻿using SLS.Core;
 using SLS.MVVM.Model;
-using SLS.TstingData;
+using SLS.TestingData;
 
 namespace SLS.Services.Repositorys
 {
     internal class LoggsRepository : RepositoryInMemory<LoggModel>
     {
-        public LoggsRepository() : base(TestingData.Loggs) { }
+        public LoggsRepository() : base(DataForTest.Loggs) { }
 
         protected override void Update(LoggModel Source, LoggModel Destination)
         {

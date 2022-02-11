@@ -1,13 +1,13 @@
 ﻿using SLS.MVVM.Model;
-using SLS.Services;
 using SLS.Services.Interfaces;
+using SLS.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace SLS.TstingData
+namespace SLS.TestingData
 {
-    internal static class TestingData
+    internal static class DataForTest
     {
         public static IEnumerable<ResourceModel> Resources => GetResourceList();
 

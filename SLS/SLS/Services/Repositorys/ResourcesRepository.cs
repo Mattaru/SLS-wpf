@@ -1,13 +1,13 @@
 ﻿using SLS.Core;
 using SLS.MVVM.Model;
-using SLS.TstingData;
+using SLS.TestingData;
 using System;
 
 namespace SLS.Services.Repositorys
 {
     internal class ResourcesRepository : RepositoryInMemory<ResourceModel>
     {
-        public ResourcesRepository() : base(TestingData.Resources) { }
+        public ResourcesRepository() : base(DataForTest.Resources) { }
 
         protected override void Update(ResourceModel Source, ResourceModel Destination)
         {
