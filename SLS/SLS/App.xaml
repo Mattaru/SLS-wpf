@@ -17,6 +17,7 @@
                 <ResourceDictionary Source="./Themes/MainThemes/MTNavigation_rb.xaml"/>
                 
                 <ResourceDictionary Source="./Themes/HomeThemes/HTForm_tb.xaml"/>
+                <ResourceDictionary Source="./Themes/HomeThemes/HTLoggListItem.xaml"/>
                 
                 <ResourceDictionary Source="./Themes/ResourceListThemes/RLTDataGrid/RLTCell_dg.xaml"/>
                 <ResourceDictionary Source="./Themes/ResourceListThemes/RLTDataGrid/RLTHeader_dg.xaml"/>

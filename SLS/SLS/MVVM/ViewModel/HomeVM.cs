@@ -21,8 +21,7 @@ namespace SLS.MVVM.ViewModel
 
         private LoggsManager _LoggsManager;
 
-        public ObservableCollection<String> HomePageLoggCollection { get; }
-
+        public ObservableCollection<LoggModel> Loggs { get; }
 
         #region ResourceFormTitle
 
@@ -104,8 +103,7 @@ namespace SLS.MVVM.ViewModel
 
             #endregion
 
-            var logs = Enumerable.Range(1, 100).Select(i => $"{DateTime.Now} | Event{i} | simple log string");
-            HomePageLoggCollection = new ObservableCollection<String>(logs);
+            Loggs = _LoggsManager.Loggs;
         }
     }
 }

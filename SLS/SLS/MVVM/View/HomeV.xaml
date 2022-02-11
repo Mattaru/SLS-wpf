@@ -36,13 +36,15 @@
                 </Grid>
                 
             </Border>
-            
+
             <ListBox Grid.Row="1"
-                     ItemsSource="{Binding HomePageLoggCollection}"
+                     ItemsSource="{Binding Loggs}"
                      Margin="20,0,4,20"
-                     Padding="20"
+                     Padding="4"
                      BorderThickness="0"
-                     ScrollViewer.VerticalScrollBarVisibility="Disabled">
+                     ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                     ScrollViewer.CanContentScroll="False"
+                     ItemContainerStyle="{StaticResource HTLoggListItem}">
                 <ListBox.Background>
                     <LinearGradientBrush EndPoint="0.6,0" StartPoint="0.0,1">
                         <GradientStop Color="#FF76B3BB"
@@ -51,15 +53,6 @@
                                               Offset="1"/>
                     </LinearGradientBrush>
                 </ListBox.Background>
-                <ListBox.Foreground>
-                    <LinearGradientBrush EndPoint="0.6,0" StartPoint="0.0,1">
-                        <GradientStop Color="#252525"
-                                              Offset="0"/>
-                        <GradientStop Color="Gray"
-                                              Offset="1"/>
-                    </LinearGradientBrush>
-                </ListBox.Foreground>
-
             </ListBox>
 
         </Grid>

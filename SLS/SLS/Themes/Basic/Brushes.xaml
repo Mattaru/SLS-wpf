@@ -8,5 +8,7 @@
     <SolidColorBrush Color="White" x:Key="WhiteBrush"/>
     <SolidColorBrush Color="DarkGreen" x:Key="DarkGreenBrush"/>
     <SolidColorBrush Color="Transparent" x:Key="TrasparentBrush"/>
+    <SolidColorBrush Color="#FF65D6EF" x:Key="SelectedItemBrush"/>
+    <SolidColorBrush Color="#FF3792C8" x:Key="SelectedBorderBrush"/>
 
 </ResourceDictionary>
