@@ -42,7 +42,7 @@ namespace SLS.MVVM.Model
             get => _password;
             set
             {
-                if (value != _password) return;
+                if (value == _password) return;
 
                 _password = value;
                 LastModificationDate = DateTime.Now;
