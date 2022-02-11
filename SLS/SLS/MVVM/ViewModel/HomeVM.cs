@@ -26,6 +26,8 @@ namespace SLS.MVVM.ViewModel
 
         public ObservableCollection<LoggModel> Loggs { get; }
 
+        public LoggModel? SelectedLoggModel { get; set; } 
+
         #region ResourceFormTitle
 
         public const string DEFAULT_FORM_TEXT = "Just default Title";
@@ -109,6 +111,7 @@ namespace SLS.MVVM.ViewModel
             #endregion
 
             Loggs = _LoggsManager.Loggs;
+            SelectedLoggModel = _LoggsManager.Loggs.LastOrDefault();
         }
     }
 }
