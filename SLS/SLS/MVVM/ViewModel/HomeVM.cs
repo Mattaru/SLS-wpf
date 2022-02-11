@@ -19,6 +19,8 @@ namespace SLS.MVVM.ViewModel
 
         private ResourcesManager _ResourceManager;
 
+        private LoggsManager _LoggsManager;
+
         public ObservableCollection<String> HomePageLoggCollection { get; }
 
 
@@ -28,7 +30,7 @@ namespace SLS.MVVM.ViewModel
 
         private string? _resourceFormTitle = DEFAULT_FORM_TEXT;
 
-        public string ResourceFormTitle { get => _resourceFormTitle; set => Set(ref _resourceFormTitle, value); }
+        public string? ResourceFormTitle { get => _resourceFormTitle; set => Set(ref _resourceFormTitle, value); }
 
         #endregion
 
@@ -36,7 +38,7 @@ namespace SLS.MVVM.ViewModel
 
         private string? _name;
 
-        public string Name { get => _name; set => Set<string>(ref _name, value); }
+        public string? Name { get => _name; set => Set(ref _name, value); }
 
         #endregion
 
@@ -44,7 +46,7 @@ namespace SLS.MVVM.ViewModel
 
         private string? _login;
 
-        public string Login { get => _login; set => Set<string>(ref _login, value); }
+        public string? Login { get => _login; set => Set(ref _login, value); }
 
         #endregion
 
@@ -52,7 +54,7 @@ namespace SLS.MVVM.ViewModel
 
         private string? _password;
 
-        public string Password { get => _password; set => Set<string>(ref _password, value); }
+        public string? Password { get => _password; set => Set(ref _password, value); }
 
         #endregion
 
@@ -70,8 +72,6 @@ namespace SLS.MVVM.ViewModel
 
             var resource = new ResourceModel(Name, Login, Password);
             _ResourceManager.Add(resource);
-
-            
 
             Task.Run(() => 
             {
@@ -93,9 +93,10 @@ namespace SLS.MVVM.ViewModel
 
         #endregion
 
-        public HomeVM(ResourcesManager ResourceManager)
+        public HomeVM(ResourcesManager ResourceManager, LoggsManager LoggsManager)
         {
             _ResourceManager = ResourceManager;
+            _LoggsManager = LoggsManager;
 
             #region Commands
 

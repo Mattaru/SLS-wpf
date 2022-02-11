@@ -15,6 +15,7 @@ namespace SLS.Services
             services.AddSingleton<ResourcesRepository>();
 
             services.AddSingleton<ResourcesManager>();
+            services.AddSingleton<LoggsManager>();
 
             return services;
         }
