@@ -15,11 +15,13 @@ namespace SLS.MVVM.ViewModel
     {
         // Propertys
 
-        public MainVM? MainVM { get; internal set; }
+        public MainVM MainVM { get; internal set; }
 
-        public ILogger? Logger { get; internal set; }
+        public ILogger Logger { get; internal set; }
 
         private ResourcesManager _ResourceManager;
+
+        private LoggsManager _LoggsManager;
 
         #region SelectedResource
 
@@ -102,7 +104,11 @@ namespace SLS.MVVM.ViewModel
 
         private void OnRemoveResourceCommandExecuted(object p) 
         {
-            _ResourceManager.Delete((ResourceModel)p);
+            var resource = (ResourceModel)p;
+
+            _ResourceManager.Delete(resource);
+            var logg = Logger.RemovedResource(resource.Name);
+            _LoggsManager.Add(logg);
         }
 
         #endregion
@@ -139,9 +145,10 @@ namespace SLS.MVVM.ViewModel
 
         #endregion
 
-        public ResourcesListVM(ResourcesManager ResourceManager)
+        public ResourcesListVM(ResourcesManager ResourceManager, LoggsManager LoggsManager)
         {
             _ResourceManager = ResourceManager;
+            _LoggsManager = LoggsManager;
 
             #region Commands
 
