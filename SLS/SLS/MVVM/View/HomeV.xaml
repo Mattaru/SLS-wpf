@@ -55,7 +55,8 @@
                     </LinearGradientBrush>
                 </ListBox.Background>
                 <i:Interaction.Behaviors>
-                    <b:ListBoxScrollIntoView/>
+                    <b:ScrollAfterLoaded/>
+                    <b:ScrollAfterUpdated/>
                 </i:Interaction.Behaviors>
             </ListBox>
 
