@@ -1,26 +1,22 @@
 ﻿using Microsoft.Xaml.Behaviors;
+using System;
 using System.Windows.Controls;
 
 namespace SLS.Infrastucture.Behaviors
 {
     internal class ListBoxScrollIntoView : Behavior<ListBox>
     {
-        protected override void OnAttached() => AssociatedObject.SelectionChanged += AssociatedObject_SelectionChanged;
+        protected override void OnAttached() => AssociatedObject.Loaded += AssociatedObject_Loaded;
+        
 
-        protected override void OnDetaching() => AssociatedObject.SelectionChanged -= AssociatedObject_SelectionChanged;
+        protected override void OnDetaching() => AssociatedObject.Loaded -= AssociatedObject_Loaded;
 
-        private void AssociatedObject_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void AssociatedObject_Loaded(object sender, System.Windows.RoutedEventArgs e)
         {
-            var listBox = sender as ListBox;
+            if (!(sender is ListBox listBox)) throw new TypeAccessException($"{sender} is not ListBox.");
 
-            if (listBox?.SelectedItem != null)
-            {
-                listBox.Dispatcher.Invoke(() =>
-                {
-                    listBox.UpdateLayout();
-                    listBox.ScrollIntoView(listBox.SelectedItem);
-                });
-            }
+            listBox.SelectedItem = listBox.Items[listBox.Items.Count - 1];
+            listBox.ScrollIntoView(listBox.SelectedItem);
         }
     }
 }

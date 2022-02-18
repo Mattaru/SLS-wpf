@@ -41,9 +41,7 @@
 
             <ListBox Grid.Row="1"
                      ItemsSource="{Binding Loggs}"
-                     SelectedItem="{Binding SelectedLoggModel}"
                      Margin="20,0,4,20"
-                     Padding="4"
                      BorderThickness="0"
                      ScrollViewer.VerticalScrollBarVisibility="Hidden"
                      ScrollViewer.CanContentScroll="False"

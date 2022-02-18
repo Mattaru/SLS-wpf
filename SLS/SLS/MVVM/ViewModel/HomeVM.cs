@@ -26,7 +26,7 @@ namespace SLS.MVVM.ViewModel
 
         public ObservableCollection<LoggModel> Loggs { get; }
 
-        public LoggModel? SelectedLoggModel { get; set; } 
+        public LoggModel? SelectedLoggModel { get; set; }
 
         #region ResourceFormTitle
 
