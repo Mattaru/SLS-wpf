@@ -3,12 +3,20 @@
 
     <SolidColorBrush Color="#CFCFCF" x:Key="FirstPrimaryBrush"/>
     <SolidColorBrush Color="#FF76B3BB" x:Key="SecondPrimaryBrush"/>
+    
     <SolidColorBrush Color="#252525" x:Key="SecondaryBrush"/>
+    
     <SolidColorBrush Color="Gray" x:Key="SupportingBrush"/>
+    
     <SolidColorBrush Color="White" x:Key="WhiteBrush"/>
     <SolidColorBrush Color="DarkGreen" x:Key="DarkGreenBrush"/>
     <SolidColorBrush Color="Transparent" x:Key="TrasparentBrush"/>
+    
     <SolidColorBrush Color="#FF65D6EF" x:Key="SelectedItemBrush"/>
     <SolidColorBrush Color="#FF3792C8" x:Key="SelectedBorderBrush"/>
+
+    <SolidColorBrush Color="#FF15602F" x:Key="AddActionBrush"/>
+    <SolidColorBrush Color="#FFA36118" x:Key="UpdateActionBrush"/>
+    <SolidColorBrush Color="#FF691809" x:Key="RemoveActionBrush"/>
 
 </ResourceDictionary>
