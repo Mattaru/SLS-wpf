@@ -26,11 +26,14 @@
                                    IsHitTestVisible="False"
                                    Visibility="Collapsed"/>
 
-                            <Rectangle Fill="{StaticResource SecondPrimaryBrush}"
-                                       x:Name="ButtomTextBoxRectangle"
-                                       Height="3"
-                                       VerticalAlignment="Bottom"
-                                       Visibility="Collapsed"/>
+                            <Border BorderBrush="{StaticResource SecondPrimaryBrush}"
+                                    BorderThickness="0,0,0,4"
+                                    Height="4"
+                                    CornerRadius="0,0,4,4"
+                                    x:Name="ButtomTextBoxRectangle"
+                                    VerticalAlignment="Bottom"
+                                    Visibility="Collapsed"/>
+                            
                         </Grid>
                     </Border>
 

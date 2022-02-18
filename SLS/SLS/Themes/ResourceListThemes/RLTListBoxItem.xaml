@@ -10,6 +10,7 @@
 
                     <Grid HorizontalAlignment="Stretch"
                           x:Name="ListBoxContainer"
+                          Margin="0,0,4,0"
                           Height="120"
                           Opacity="0.4"
                           IsEnabled="False">

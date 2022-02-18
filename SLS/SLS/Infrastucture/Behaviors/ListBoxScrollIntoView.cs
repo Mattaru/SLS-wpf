@@ -4,7 +4,7 @@ using System.Windows.Controls;
 
 namespace SLS.Infrastucture.Behaviors
 {
-    internal class ScrollAfterLoaded : Behavior<ListBox>
+    internal class ScrollToLastAfterLoaded : Behavior<ListBox>
     {
         protected override void OnAttached() => AssociatedObject.Loaded += AssociatedObject_Loaded;
         
@@ -20,7 +20,7 @@ namespace SLS.Infrastucture.Behaviors
         }
     }
 
-    internal class ScrollAfterUpdated : Behavior<ListBox>
+    internal class ScrollToLastAfterUpdated : Behavior<ListBox>
     {
         protected override void OnAttached() => AssociatedObject.SourceUpdated += AssociatedObject_SourceUpdated;
         

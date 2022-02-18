@@ -145,34 +145,42 @@
         <Border Grid.RowSpan="3" Grid.Column="1"
                 Background="{StaticResource SecondaryBrush}">
 
-            <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Vertical"
+                        Margin="10,30">
 
-                <TextBox Height="30"
-                         Margin="10,20"
+                <TextBox Height="40"
+                         Margin="0,10"
                          Text="{Binding FilterString, UpdateSourceTrigger=PropertyChanged}"
                          Tag="Search ..."
                          Background="{StaticResource FirstPrimaryBrush}"
                          VerticalContentAlignment="Center"
                          HorizontalContentAlignment="Left"
                          Padding="16,0"
-                         FontSize="12"
+                         FontSize="14"
                          Style="{StaticResource RLTSearch_tb}"/>
 
-                <Button Content="Add"
-                        Width="80"
-                        HorizontalAlignment="Left"
-                        Margin="10,2"
-                        Style="{StaticResource RLTMenu_b}"
-                        Command="{Binding AddEmptyRecourceCommand}"/>
+                <Grid>
 
-                <Button Content="Delete"
-                        Width="80"
-                        HorizontalAlignment="Left"
-                        Margin="10,2"
-                        Style="{StaticResource RLTMenu_b}"
-                        Command="{Binding RemoveResourceCommand}"
-                        CommandParameter="{Binding SelectedResource}"/>
-                
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Button Grid.Column="0" Content="Add"
+                            Margin="0,0,2,0"
+                            Height="40"
+                            Style="{StaticResource ActionButtonTheme}"
+                            Command="{Binding AddEmptyRecourceCommand}"/>
+
+                    <Button Grid.Column="1" Content="Delete"
+                            Margin="2,0,0,0"
+                            Height="40"
+                            Style="{StaticResource ActionButtonTheme}"
+                            Command="{Binding RemoveResourceCommand}"
+                            CommandParameter="{Binding SelectedResource}"/>
+
+                </Grid>
+
             </StackPanel>
 
         </Border>

@@ -5,6 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
              xmlns:b="clr-namespace:SLS.Infrastucture.Behaviors"
+             xmlns:fa="http://schemas.fontawesome.com/icons/"
              xmlns:local="clr-namespace:SLS.MVVM.View"
              d:DesignHeight="620" d:DesignWidth="950"
              DataContext="{Binding HomeViewModel, Source={StaticResource VMLocator}}">
@@ -29,11 +30,22 @@
                 
                 <Grid>
 
-                    <Label Content="Last actions:"
-                           Margin="20,0"
-                           VerticalAlignment="Bottom"
-                           Foreground="{StaticResource SupportingBrush}"
-                           FontSize="16"/>
+                    <StackPanel Orientation="Horizontal">
+                        
+                        <fa:ImageAwesome Icon="Solid_InfoCircle"
+                                         Height="14"
+                                         Margin="2,0,0,12"
+                                         Opacity="0.6"
+                                         VerticalAlignment="Bottom"
+                                         Foreground="{StaticResource SupportingBrush}"
+                                         ToolTip="Latest events with saved data."/>
+
+                        <Label Content="Last actions:"
+                               VerticalAlignment="Bottom"
+                               Foreground="{StaticResource SupportingBrush}"
+                               FontSize="16"/>
+                        
+                    </StackPanel>
 
                 </Grid>
                 
@@ -55,8 +67,8 @@
                     </LinearGradientBrush>
                 </ListBox.Background>
                 <i:Interaction.Behaviors>
-                    <b:ScrollAfterLoaded/>
-                    <b:ScrollAfterUpdated/>
+                    <b:ScrollToLastAfterLoaded/>
+                    <b:ScrollToLastAfterUpdated/>
                 </i:Interaction.Behaviors>
             </ListBox>
 
